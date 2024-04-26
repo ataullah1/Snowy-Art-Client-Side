@@ -8,6 +8,8 @@ import userProfile from '../../assets/profile-blanck.png';
 import { IoClose } from 'react-icons/io5';
 import { MdMenu } from 'react-icons/md';
 import { Tooltip } from 'react-tooltip';
+import { CgClose } from 'react-icons/cg';
+import { FiUserPlus } from 'react-icons/fi';
 
 const Nav = () => {
   // Theme funtionality
@@ -178,7 +180,7 @@ const Nav = () => {
           </div>
           {/* Learge screen Menu  */}
           <div className="navbar-center hidden lg:flex">
-            <ul className="navManu menu menu-horizontal px-1 flex gap-6 text-white">
+            <ul className="navManu menu menu-horizontal px-1 flex gap-2 xl:gap-6 text-white">
               <NavLink
                 to={'/'}
                 className="-skew-x-[15deg] w-28 py-2 border-2 px-3 text-center font-normal text-white rounded-md hover:border-firstColor"
@@ -269,13 +271,41 @@ const Nav = () => {
             ) : (
               <div className=" gap-4 hidden sm:flex">
                 <Link
-                  to={'/login'}
+                  onClick={() =>
+                    document.getElementById('my_modal_1').showModal()
+                  }
                   className="font-semibold bg-firstColor px-5 sm:px-8 py-2 rounded-md active:scale-90 duration-100 text-white button2"
                 >
-                  Login
+                  <span className="flex items-center gap-2">
+                    <FiUserPlus /> Account
+                  </span>
                 </Link>
               </div>
             )}
+            {/* Open the modal using document.getElementById('ID').showModal() method */}
+            <dialog id="my_modal_1" className="modal">
+              <div className="modal-box">
+                <form method="dialog">
+                  {/* if there is a button in form, it will close the modal */}
+                  <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-xl">
+                    <CgClose />
+                  </button>
+                </form>
+                <div className="flex gap-4 justify-center items-center min-h-72">
+                  <form method="dialog"></form>
+                  <Link to={'/login'}>
+                    <button className="text-lg font-bold py-2 border-2 bg-transparent border-firstColor hover:bg-firstColor px-3 rounded-md w-40 text-firstColor hover:text-white">
+                      Log In
+                    </button>
+                  </Link>
+                  <Link to={'/register'}>
+                    <button className="text-lg font-bold py-2 border-2 bg-transparent border-firstColor hover:bg-firstColor px-3 rounded-md w-40 text-firstColor hover:text-white">
+                      Create Account
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </dialog>
           </div>
         </div>
       </div>

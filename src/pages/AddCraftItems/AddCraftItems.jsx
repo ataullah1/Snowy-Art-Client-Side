@@ -69,14 +69,14 @@ const AddCraftItems = () => {
       </div>
 
       {/* Main From */}
-      <div className="rounded-lg py-5 px-6 md:px-8 lg:px-16 my-8 border-2 border-firstColor w-11/12 mx-auto">
-        <h1 className="text-5xl font-bold text-center dark:text-white">
+      <div className="rounded-lg py-5 px-6 md:px-8 lg:px-16 my-8 border-2 border-firstColor w-11/12 mx-auto shadow-xl">
+        <h1 className="text-5xl font-bold text-center">
           Add Art & Craft Items
         </h1>
-        <p className="max-w-[932px] text-center text-opacity-70 sm:text-lg mx-auto pt-2">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-          corporis quisquam delectus eum placeat, labore vitae quaerat fugiat
-          voluptatum suscipit nisi est deleniti consectetur porro.
+        <p className="max-w-[932px] text-center text-opacity-70 sm:text-lg mx-auto pt-2 font-light">
+          {`Welcome to SnowyArt's Add Art & Craft Items page! Share your creative
+          treasures with the world. Upload, describe, and showcase your
+          masterpieces here`}
         </p>
         <hr className=" mt-3 mb-6" />
         <div>
@@ -84,66 +84,95 @@ const AddCraftItems = () => {
             <div className="flex flex-col md:flex-row gap-5">
               <div className="flex flex-col gap-2 w-full md:w-1/2">
                 <label className=" text-opacity-80 text-lg font-semibold">
-                  Name
+                  Name Of Item
                 </label>
                 <input
                   required
                   className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border"
                   type="text"
                   name="name"
-                  placeholder="Enter coffee name"
+                  placeholder="Enter item name"
                 />
               </div>
               <div className="flex flex-col gap-2 w-full md:w-1/2">
                 <label className=" text-opacity-80 text-lg font-semibold">
-                  Chef
+                  Select Category
                 </label>
-                <input
-                  required
+                <select
                   className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border"
-                  type="text"
-                  name="chef"
-                  placeholder="Enter coffee chef"
-                />
-              </div>
-            </div>
-            <div className="flex flex-col md:flex-row gap-5">
-              <div className="flex flex-col gap-2 w-full md:w-1/2">
-                <label className=" text-opacity-80 text-lg font-semibold">
-                  Supplier
-                </label>
-                <input
-                  required
-                  className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border"
-                  type="text"
-                  name="supplier"
-                  placeholder="Enter coffee supplier"
-                />
-              </div>
-              <div className="flex flex-col gap-2 w-full md:w-1/2">
-                <label className=" text-opacity-80 text-lg font-semibold">
-                  Taste
-                </label>
-                <input
-                  required
-                  className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border"
-                  type="text"
-                  name="taste"
-                  placeholder="Enter coffee taste"
-                />
-              </div>
-            </div>
-            <div className="flex flex-col md:flex-row gap-5">
-              <div className="flex flex-col gap-2 w-full md:w-1/2">
-                <label className=" text-opacity-80 text-lg font-semibold">
-                  Category
-                </label>
-                <input
-                  required
-                  className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border"
-                  type="text"
                   name="category"
-                  placeholder="Enter coffee category"
+                >
+                  <option value="" defaultChecked>
+                    Select a category
+                  </option>
+                  <option value="Landscape Painting">
+                    Landscape Paintings
+                  </option>
+                  <option value="Portrait Drawing">Portrait Drawing</option>
+                  <option value="Watercolour Painting">
+                    Watercolour Painting
+                  </option>
+                  <option value="Oil Painting">Oil Painting</option>
+                  <option value="Charcoal Sketching">Charcoal Sketching</option>
+                  <option value="Cartoon Drawing">Cartoon Drawing</option>
+                </select>
+              </div>
+            </div>
+            <div className="flex flex-col md:flex-row gap-5">
+              <div className="flex flex-col gap-2 w-full md:w-1/2">
+                <label className=" text-opacity-80 text-lg font-semibold">
+                  Processing Time
+                </label>
+                <input
+                  required
+                  className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border"
+                  type="time"
+                  name="processing_time"
+                  placeholder="Enter processing time"
+                />
+              </div>
+              <div className="flex flex-col md:flex-row items-center justify-center gap-5 w-full md:w-1/2">
+                <div className="flex flex-col w-full gap-2">
+                  <label className=" text-opacity-80 text-lg font-semibold">
+                    Customization
+                  </label>
+                  <select
+                    required
+                    className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border"
+                    name="customization"
+                  >
+                    <option defaultChecked>Select a option</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+                <div className="flex flex-col w-full gap-2">
+                  <label className=" text-opacity-80 text-lg font-semibold">
+                    Stock Status
+                  </label>
+                  <select
+                    required
+                    className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border"
+                    name="customization"
+                  >
+                    <option defaultChecked>Select a option</option>
+                    <option value="In stock">In stock</option>
+                    <option value="Out Stock">Out Stock</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col md:flex-row gap-5">
+              <div className="flex flex-col gap-2 w-full md:w-1/2">
+                <label className=" text-opacity-80 text-lg font-semibold">
+                  Rating Of Item
+                </label>
+                <input
+                  required
+                  className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border"
+                  type="text"
+                  name="rating"
+                  placeholder="Enter item rating"
                 />
               </div>
               <div className="flex flex-col gap-2 w-full md:w-1/2">
@@ -155,7 +184,7 @@ const AddCraftItems = () => {
                   className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border"
                   type="text"
                   name="price"
-                  placeholder="Enter coffee price"
+                  placeholder="Enter price of item"
                 />
               </div>
             </div>
@@ -169,29 +198,23 @@ const AddCraftItems = () => {
                   className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border"
                   type="text"
                   name="photo"
-                  placeholder="Enter photo URL"
+                  placeholder="Enter item photo URL"
                 />
               </div>
               <div className="flex flex-col gap-2 w-full md:w-1/2">
                 <label className=" text-opacity-80 text-lg font-semibold">
-                  Details
+                  Short Description
                 </label>
                 <textarea
                   className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border min-h-10 h-10"
-                  name="details"
-                  placeholder="Enter coffee details"
+                  name="description"
+                  placeholder="Enter item short description
+                  "
                 ></textarea>
-                {/* <input
-                    required
-                    className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border"
-                    type="text"
-                    name="details"
-                    placeholder="Enter coffee details"
-                  /> */}
               </div>
             </div>
 
-            <button className="w-full py-1 bg-[#D2B48C] rounded-[5px] border-2 border-primaryColor text-primaryColor text-lg font-bold sm:text-2xl mb-5 md:mb-0 active:-skew-x-[30deg] duration-200">
+            <button className="w-full py-1 bg-firstColor rounded-md border-2 border-firstColor text-white font-bold sm:text-lg mb-5 md:mb-0 active:-skew-x-[30deg] hover:bg-transparent hover:text-firstColor duration-200">
               Add Item
             </button>
           </form>
