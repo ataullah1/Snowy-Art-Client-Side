@@ -36,7 +36,7 @@ const Root = () => {
   return (
     <div>
       <Helmet>
-        <title>Home | SnowyNest</title>
+        <title>Home | SnowyArt</title>
       </Helmet>
       <div
         className={

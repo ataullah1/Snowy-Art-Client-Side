@@ -32,6 +32,7 @@ You can access the live version of SnowyNest [here](https://snowynest-c1dbe.web.
 - **Firebase**
 - **React Fast Marquee** <!-- - **React Leaflet** -->
 - **React Helmet**
+- **React Tooltip**
 
 ## How to Install this project!
 
@@ -73,49 +74,7 @@ To install and run SnowyNest locally, follow these steps:
 - **React Icon**
 
   ```
-  npm install react-icons --save
-  ```
-
-- **Swiper js**
-
-  ```
-  npm i swiper
-  ```
-
-- **Firebase**
-
-  ```
-  npm i react-firebase
-  ```
-
-- **React Hook Form**
-
-  ```
-  npm i react-hook-form
-  ```
-
-- **Sweetalert2**
-
-  ```
-  npm i sweetalert2
-  ```
-
-- **React Fast Marquee**
-
-  ```
-  npm i react-fast-marquee
-  ```
-
-- **React Helmet**
-
-  ```
-  npm i react-helmet
-  ```
-
-- **AOS Package**
-
-  ```
-  npm install --save aos@next
+  npm install react-icons swiper react-firebase react-hook-form sweetalert2 react-fast-marquee react-helmet aos react-tooltip
   ```
 
 5. Run the development server:

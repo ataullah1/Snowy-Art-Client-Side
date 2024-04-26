@@ -7,6 +7,7 @@ import { ContextAuth } from '../../provider/Provider';
 import userProfile from '../../assets/profile-blanck.png';
 import { IoClose } from 'react-icons/io5';
 import { MdMenu } from 'react-icons/md';
+import { Tooltip } from 'react-tooltip';
 
 const Nav = () => {
   // Theme funtionality
@@ -29,11 +30,11 @@ const Nav = () => {
   const { userDta } = useContext(ContextAuth);
   const [viewProfile, setViewProfile] = useState(false);
   const [view, setView] = useState(false);
-  const [hover, setHover] = useState(false);
 
   // console.log(hover);
   return (
     <div className="">
+      <Tooltip id="my-tooltip" />
       <div className="w-11/12 mx-auto max-w-[1700px]">
         <div className=" navbar flex items-center flex-col sm:flex-row sm:justify-between">
           <div className="navbar-start flex items-center flex-row-reverse justify-between w-full sm:w-auto sm:flex-row">
@@ -71,18 +72,15 @@ const Nav = () => {
               {userDta ? (
                 <div className="navbar-end flex sm:hidden gap-4 w-auto">
                   <img
-                    onMouseOver={() => setHover(true)}
-                    onMouseOut={() => setHover(false)}
+                    data-tooltip-id="my-tooltip"
+                    data-tooltip-content={userDta.displayName}
+                    data-tooltip-place="bottom-end"
                     onClick={() => setViewProfile(!viewProfile)}
                     src={userDta.photoURL}
                     className="border-2 border-firstColor rounded-full h-12 w-12 cursor-pointer p-[2px]"
                     alt=""
                   />
-                  {hover && (
-                    <p className="text-firstColor rounded-md absolute top-16 lg:top-[70px] right-14 lg:right-20 bg-slate-100 border-firstColor border px-3 py-1">
-                      {userDta.displayName}
-                    </p>
-                  )}
+
                   <div
                     className={`absolute top-16 lg:top-20 right-8 duration-3000 transition-transform ${
                       viewProfile
@@ -239,22 +237,15 @@ const Nav = () => {
             {userDta ? (
               <div className="  hidden sm:flex gap-4">
                 <img
-                  onMouseOver={() => setHover(true)}
-                  onMouseOut={() => setHover(false)}
                   onClick={() => setViewProfile(!viewProfile)}
                   src={userDta.photoURL ? userDta.photoURL : userProfile}
                   className="border-2 border-firstColor rounded-full h-12 w-12 cursor-pointer p-[2px]"
                   alt=""
+                  data-tooltip-id="my-tooltip"
+                  data-tooltip-content={userDta.displayName}
+                  data-tooltip-place="bottom"
                 />
-                {hover && (
-                  <div className=" rounded-md absolute top-16 lg:top-[70px] right-14 lg:right-20 bg-slate-100 border-firstColor border px-3 py-1">
-                    <div
-                      className="bg-firstColor h-2 w-3 absolute right-1 -top-2 hidden sm:block"
-                      style={{ clipPath: 'polygon(50% 0, 0% 100%, 100% 100%)' }}
-                    ></div>
-                    <p className="text-firstColor">{userDta.displayName}</p>
-                  </div>
-                )}
+
                 <div
                   className={`absolute top-16 lg:top-20 right-16 duration-3000 transition-transform ${
                     viewProfile
