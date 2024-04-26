@@ -1,12 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Home from '../pages/Home/Home';
-import About from '../pages/About/About';
 import Login from '../pages/Login/Login';
 import Register from '../pages/Register/Register';
 import Root from '../root/Root';
-import AllArtCraftItems from '../components/AllArtCraftItems/AllArtCraftItems';
-import MyArtCraftList from '../components/MyArtCraftList/MyArtCraftList';
-import AddCraftItems from '../components/AddCraftItems/AddCraftItems';
+import AllArtCraftItems from '../pages/AllArtCraftItems/AllArtCraftItems';
+import AddCraftItems from '../pages/AddCraftItems/AddCraftItems';
+import MyArtCraftList from '../pages/MyArtCraftList/MyArtCraftList';
 
 const router = createBrowserRouter([
   {

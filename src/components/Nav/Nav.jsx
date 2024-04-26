@@ -181,25 +181,25 @@ const Nav = () => {
             <ul className="navManu menu menu-horizontal px-1 flex gap-6 text-white">
               <NavLink
                 to={'/'}
-                className="w-28 py-2 border-2 px-3 text-center font-semibold text-white rounded-md hover:border-firstColor"
+                className="-skew-x-[15deg] w-28 py-2 border-2 px-3 text-center font-semibold text-white rounded-md hover:border-firstColor"
               >
                 Home
               </NavLink>
               <NavLink
                 to={'/all-art-craft-items'}
-                className="py-2 border-2 px-3 text-center font-semibold text-white rounded-md hover:border-firstColor"
+                className="-skew-x-[15deg] py-2 border-2 px-3 text-center font-semibold text-white rounded-md hover:border-firstColor"
               >
                 All Art & craft Items
               </NavLink>
               <NavLink
                 to={'/add-craft-item'}
-                className="py-2 border-2 px-3 text-center font-semibold text-white rounded-md hover:border-firstColor"
+                className="-skew-x-[15deg] py-2 border-2 px-3 text-center font-semibold text-white rounded-md hover:border-firstColor"
               >
                 Add Craft Item
               </NavLink>
               <NavLink
                 to={'/my-art-craft-list'}
-                className="py-2 border-2 px-3 text-center font-semibold text-white rounded-md hover:border-firstColor"
+                className="-skew-x-[15deg] py-2 border-2 px-3 text-center font-semibold text-white rounded-md hover:border-firstColor"
               >
                 My Art&Craft List
               </NavLink>
@@ -270,7 +270,7 @@ const Nav = () => {
               <div className=" gap-4 hidden sm:flex">
                 <Link
                   to={'/login'}
-                  className="font-semibold bg-firstColor px-5 sm:px-8 py-2 sm:py-3 rounded-md active:scale-90 duration-100 text-white button2"
+                  className="font-semibold bg-firstColor px-5 sm:px-8 py-2 rounded-md active:scale-90 duration-100 text-white button2"
                 >
                   Login
                 </Link>

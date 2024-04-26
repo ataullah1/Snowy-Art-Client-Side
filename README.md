@@ -24,6 +24,8 @@ You can access the live version of SnowyNest [here](https://snowynest-c1dbe.web.
 
 ## Package Used
 
+- **React Tooltip**
+- **React-Simple-Typewriter**
 - **AOS Package**
 - **Swiper**
 - **React Hook Form**
@@ -32,7 +34,6 @@ You can access the live version of SnowyNest [here](https://snowynest-c1dbe.web.
 - **Firebase**
 - **React Fast Marquee** <!-- - **React Leaflet** -->
 - **React Helmet**
-- **React Tooltip**
 
 ## How to Install this project!
 

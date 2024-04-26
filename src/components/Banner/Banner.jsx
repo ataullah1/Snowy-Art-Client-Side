@@ -17,7 +17,7 @@ import { Typewriter } from 'react-simple-typewriter';
 
 const Banner = () => {
   return (
-    <div className="min-h-screen bg-red-200">
+    <div className="h-[400px] md:min-h-screen">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -150,7 +150,7 @@ const Banner = () => {
         </SwiperSlide>
       </Swiper>
       <div className="h-[400px] md:min-h-screen absolute top-0 left-0 z-10 w-full flex items-center justify-center ">
-        <h1 className="bannerFont text-4xl md:text-6xl text-white text-center max-w-[700px] mx-auto">
+        <h1 className="bannerFont text-4xl md:text-6xl text-white text-center max-w-[700px] mx-auto px-4">
           <Typewriter
             cursor
             cursorBlinking
