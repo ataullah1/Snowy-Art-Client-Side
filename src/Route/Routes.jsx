@@ -8,14 +8,18 @@ import Root from '../root/Root';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Root/>,
+    element: <Root />,
     children: [
       {
         path: '/',
         element: <Home />,
       },
       {
-        path: '/about',
+        path: '/all-art-craft-items',
+        element: <About />,
+      },
+      {
+        path: '/add-craft-item',
         element: <About />,
       },
       {

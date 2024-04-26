@@ -37,7 +37,7 @@ const Nav = () => {
       <div className="w-11/12 mx-auto max-w-[1700px]">
         <div className=" navbar flex items-center flex-col sm:flex-row sm:justify-between">
           <div className="navbar-start flex items-center flex-row-reverse justify-between w-full sm:w-auto sm:flex-row">
-            <div className="flex items-center">
+            <div className="flex gap-4 items-center">
               <div className="sm:hidden">
                 <label className="swap swap-rotate">
                   {/* this hidden checkbox controls the state */}
@@ -111,7 +111,7 @@ const Nav = () => {
                     {view ? <IoClose /> : <MdMenu />}
                   </div>
                   {view && (
-                    <ul className="navManu absolute mt-1 sm:mt-3 -ml-40 sm:ml-4 z-10 p-2 shadow rounded-box w-52 border-2 border-solid border-firstColor bg-slate-800 text-white flex flex-col lg:hidden">
+                    <ul className="navManu absolute mt-1 sm:mt-3 -ml-40 sm:ml-4 z-10 p-2 shadow rounded-box w-52 border-2 border-solid border-firstColor bg-slate-800 text-white flex flex-col gap-2 lg:hidden">
                       <div
                         onClick={() => setView(!view)}
                         className="sm:hidden cursor-pointer text-firstColor text-3xl -translate-x-9 translate-y-1/2 top-[calc(50%-20px)] absolute"
@@ -119,7 +119,7 @@ const Nav = () => {
                         <IoIosArrowForward />
                       </div>
                       <div
-                        style={{ borderRadius: '0 10px 0 0' }}
+                        style={{ borderRadius: '0 10px 0px 10px' }}
                         onClick={() => setView(!view)}
                         className="hidden sm:block cursor-pointer  text-firstColor text-3xl -top-4  right-0 translate-y-1/2 absolute bg-firstColor"
                       >
@@ -134,22 +134,22 @@ const Nav = () => {
                         Home
                       </NavLink>
                       <NavLink
-                        to={'/about'}
+                        to={'/all-art-craft-items'}
                         className="hover:bg-slate-300 hover:text-firstColor py-1 px-4 rounded"
                       >
-                        About
+                        All Art & craft Items
                       </NavLink>
                       <NavLink
-                        to={'/blog'}
+                        to={'/add-craft-item'}
                         className="hover:bg-slate-300 hover:text-firstColor py-1 px-4 rounded"
                       >
-                        Blog
+                        Add Craft Item
                       </NavLink>
                       <NavLink
-                        to={'/contact'}
+                        to={'/my-art-craft-list'}
                         className="hover:bg-slate-300 hover:text-firstColor py-1 px-4 rounded"
                       >
-                        Contact
+                        My Art&Craft List
                       </NavLink>
                       <div className="flex sm:hidden flex-col gap-2 mt-2">
                         <Link
@@ -181,27 +181,27 @@ const Nav = () => {
             <ul className="navManu menu menu-horizontal px-1 flex gap-6 text-white">
               <NavLink
                 to={'/'}
-                className="w-28 py-3 text-center font-semibold text-firstColor rounded-md border hover:border-firstColor"
+                className="w-28 py-3 px-3 text-center font-semibold text-firstColor rounded-md border hover:border-firstColor"
               >
                 Home
               </NavLink>
               <NavLink
-                to={'/about'}
-                className="w-28 py-3 text-center font-semibold text-firstColor rounded-md border hover:border-firstColor"
+                to={'/all-art-craft-items'}
+                className="py-3 px-3 text-center font-semibold text-firstColor rounded-md border hover:border-firstColor"
               >
-                About
+                All Art & craft Items
               </NavLink>
               <NavLink
-                to={'/blog'}
-                className="w-28 py-3 text-center font-semibold text-firstColor rounded-md border hover:border-firstColor"
+                to={'/add-craft-item'}
+                className="py-3 px-3 text-center font-semibold text-firstColor rounded-md border hover:border-firstColor"
               >
-                Blog
+                Add Craft Item
               </NavLink>
               <NavLink
-                to={'/contact'}
-                className="w-28 py-3 text-center font-semibold text-firstColor rounded-md border hover:border-firstColor"
+                to={'/my-art-craft-list'}
+                className="py-3 px-3 text-center font-semibold text-firstColor rounded-md border hover:border-firstColor"
               >
-                Contact
+                My Art&Craft List
               </NavLink>
             </ul>
           </div>
