@@ -74,7 +74,7 @@ To install and run SnowyNest locally, follow these steps:
 - **React Icon**
 
   ```
-  npm install react-icons swiper react-firebase react-hook-form sweetalert2 react-fast-marquee react-helmet aos react-tooltip
+  npm install react-icons swiper react-firebase react-hook-form sweetalert2 react-fast-marquee react-helmet aos react-tooltip react-simple-typewriter
   ```
 
 5. Run the development server:
