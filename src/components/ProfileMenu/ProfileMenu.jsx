@@ -6,12 +6,12 @@ const ProfileMenu = () => {
   const { userDta, logOut } = useContext(ContextAuth);
   return (
     <div className="h-full">
-      <div className="border-2 bg-slate-500 text-white border-orange-400 rounded-md w-[300px] p-4 max-h-[430px] overflow-y-scroll">
+      <div className="profilemenu border-2 bg-slate-500 text-white border-orange-400 rounded-md w-[300px] p-4 max-h-[400px] overflow-y-scroll">
         <div className="space-y-2">
           <img
-            src=""
+            src={userDta.photoURL}
             alt=""
-            className="h-16 w-16 border border-orange-400 p-2 rounded-full mx-auto"
+            className="h-16 w-16 border-2 border-orange-400 p-1 rounded-full mx-auto"
           />
           <h2 className="text-2xl font-semibold text-center">
             {userDta ? userDta.displayName : 'user.displayName'}
@@ -36,19 +36,19 @@ const ProfileMenu = () => {
               Home
             </Link>
             <Link
-              className="py-1.5 border rounded-md w-full px-3 hover:border-orange-400 duration-150"
+              className="py-1.5 border rounded-md w-full px-3 hover:border-orange-400 duration-150 lg:hidden"
               to={'/my-art-craft-list'}
             >
               My Art&Craft List
             </Link>
             <Link
-              className="py-1.5 border rounded-md w-full px-3 hover:border-orange-400 duration-150"
+              className="py-1.5 border rounded-md w-full px-3 hover:border-orange-400 duration-150 lg:hidden"
               to={'/all-art-craft-items'}
             >
               All Art & craft Items
             </Link>
             <Link
-              className="py-1.5 border rounded-md w-full px-3 hover:border-orange-400 duration-150"
+              className="py-1.5 border rounded-md w-full px-3 hover:border-orange-400 duration-150 lg:hidden"
               to={'/add-craft-item'}
             >
               Add Craft Items

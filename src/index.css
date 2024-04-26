@@ -55,6 +55,23 @@ button {
   color: #fa983a;
 }
 
+/* profilemenu height control */
+@media (max-height: 450px) {
+  .profilemenu {
+    max-height: 350px;
+  }
+}
+@media (max-height: 400px) {
+  .profilemenu {
+    max-height: 280px;
+  }
+}
+@media (max-height: 320px) {
+  .profilemenu {
+    max-height: 200px;
+  }
+}
+
 /* CUstom Button Design */
 .button2 {
   display: inline-block;
