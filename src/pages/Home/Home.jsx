@@ -5,7 +5,9 @@ const Home = () => {
   return (
     <div>
       <Banner />
-      <CraftItemsSection />
+      <div className="w-11/12 mx-auto">
+        <CraftItemsSection />
+      </div>
     </div>
   );
 };

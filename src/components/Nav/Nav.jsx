@@ -181,25 +181,25 @@ const Nav = () => {
             <ul className="navManu menu menu-horizontal px-1 flex gap-6 text-white">
               <NavLink
                 to={'/'}
-                className="-skew-x-[15deg] w-28 py-2 border-2 px-3 text-center font-semibold text-white rounded-md hover:border-firstColor"
+                className="-skew-x-[15deg] w-28 py-2 border-2 px-3 text-center font-normal text-white rounded-md hover:border-firstColor"
               >
                 Home
               </NavLink>
               <NavLink
                 to={'/all-art-craft-items'}
-                className="-skew-x-[15deg] py-2 border-2 px-3 text-center font-semibold text-white rounded-md hover:border-firstColor"
+                className="-skew-x-[15deg] py-2 border-2 px-3 text-center font-normal text-white rounded-md hover:border-firstColor"
               >
                 All Art & craft Items
               </NavLink>
               <NavLink
                 to={'/add-craft-item'}
-                className="-skew-x-[15deg] py-2 border-2 px-3 text-center font-semibold text-white rounded-md hover:border-firstColor"
+                className="-skew-x-[15deg] py-2 border-2 px-3 text-center font-normal text-white rounded-md hover:border-firstColor"
               >
                 Add Craft Item
               </NavLink>
               <NavLink
                 to={'/my-art-craft-list'}
-                className="-skew-x-[15deg] py-2 border-2 px-3 text-center font-semibold text-white rounded-md hover:border-firstColor"
+                className="-skew-x-[15deg] py-2 border-2 px-3 text-center font-normal text-white rounded-md hover:border-firstColor"
               >
                 My Art&Craft List
               </NavLink>

@@ -34,7 +34,7 @@ const Banner = () => {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation, Keyboard]}
-        className="mySwiper h-[400px] md:min-h-screen"
+        className="mySwiper h-[400px] md:min-h-screen relative"
       >
         <SwiperSlide>
           <div
