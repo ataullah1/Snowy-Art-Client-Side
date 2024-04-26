@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
+import { ContextAuth } from '../../provider/Provider';
+import { useContext } from 'react';
 const ProfileMenu = () => {
+  const { userDta, logOut } = useContext(ContextAuth);
   return (
     <div>
       <div className="border-2 bg-slate-500 text-white border-orange-400 rounded-md w-[300px] p-4">
@@ -10,7 +13,7 @@ const ProfileMenu = () => {
             className="h-16 w-16 border border-orange-400 p-2 rounded-full mx-auto"
           />
           <h2 className="text-2xl font-semibold text-center">
-            {'user.displayName'}
+            {userDta ? userDta.displayName : 'user.displayName'}
           </h2>
           <div className="w-full text-center">
             <Link to={'profile'}>
@@ -48,7 +51,7 @@ const ProfileMenu = () => {
             </Link>
           </ul>
           <button
-            // onClick={logOutProfile}
+            onClick={logOut}
             className="relative group w-full py-1.5 px-4 border-2 font-bold tracking-widest active:scale-95 duration-150 hover:border-purple-600 hover:text-orange-400 border-orange-400 rounded"
           >
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-600 group-hover:w-full group-hover:transition-all"></span>
