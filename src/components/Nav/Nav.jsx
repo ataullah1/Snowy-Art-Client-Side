@@ -90,7 +90,7 @@ const Nav = () => {
                   >
                     <div className="relative">
                       <div
-                        className="text-white absolute text-2xl top-3 left-3 border rounded cursor-pointer hover:border-firstColor duration-150"
+                        className="text-white absolute h-full text-2xl top-3 left-3 border rounded cursor-pointer hover:border-firstColor duration-150"
                         onClick={() => setViewProfile(!viewProfile)}
                       >
                         <IoMdClose />

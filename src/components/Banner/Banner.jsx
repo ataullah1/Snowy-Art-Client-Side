@@ -2,6 +2,9 @@ import slide1 from '../../assets/banner/img1.jpg';
 import slide2 from '../../assets/banner/img2.jpg';
 import slide3 from '../../assets/banner/img3.png';
 import slide4 from '../../assets/banner/img4.png';
+import slide5 from '../../assets/banner/img5.jpg';
+import slide6 from '../../assets/banner/img6.jpg';
+import slide7 from '../../assets/banner/img7.jpg';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
@@ -86,6 +89,54 @@ const Banner = () => {
             className="h-full bg-cover bg-no-repeat p-12 text-center"
             style={{
               backgroundImage: `url(${slide4})`,
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+            }}
+          >
+            <div
+              className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed"
+              style={{ backgroundColor: ' rgba(0, 0, 0, 0.6)' }}
+            ></div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div
+            className="h-full bg-cover bg-no-repeat p-12 text-center"
+            style={{
+              backgroundImage: `url(${slide5})`,
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+            }}
+          >
+            <div
+              className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed"
+              style={{ backgroundColor: ' rgba(0, 0, 0, 0.6)' }}
+            ></div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div
+            className="h-full bg-cover bg-no-repeat p-12 text-center"
+            style={{
+              backgroundImage: `url(${slide6})`,
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+            }}
+          >
+            <div
+              className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed"
+              style={{ backgroundColor: ' rgba(0, 0, 0, 0.6)' }}
+            ></div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div
+            className="h-full bg-cover bg-no-repeat p-12 text-center"
+            style={{
+              backgroundImage: `url(${slide7})`,
               backgroundPosition: 'center',
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',

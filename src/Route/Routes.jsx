@@ -4,6 +4,9 @@ import About from '../pages/About/About';
 import Login from '../pages/Login/Login';
 import Register from '../pages/Register/Register';
 import Root from '../root/Root';
+import AllArtCraftItems from '../components/AllArtCraftItems/AllArtCraftItems';
+import MyArtCraftList from '../components/MyArtCraftList/MyArtCraftList';
+import AddCraftItems from '../components/AddCraftItems/AddCraftItems';
 
 const router = createBrowserRouter([
   {
@@ -16,11 +19,15 @@ const router = createBrowserRouter([
       },
       {
         path: '/all-art-craft-items',
-        element: <About />,
+        element: <AllArtCraftItems />,
       },
       {
         path: '/add-craft-item',
-        element: <About />,
+        element: <AddCraftItems />,
+      },
+      {
+        path: '/my-art-craft-list',
+        element: <MyArtCraftList />,
       },
       {
         path: '/login',

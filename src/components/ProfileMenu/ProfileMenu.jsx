@@ -5,8 +5,8 @@ import { BiLogOut } from 'react-icons/bi';
 const ProfileMenu = () => {
   const { userDta, logOut } = useContext(ContextAuth);
   return (
-    <div>
-      <div className="border-2 bg-slate-500 text-white border-orange-400 rounded-md w-[300px] p-4">
+    <div className="h-full">
+      <div className="border-2 bg-slate-500 text-white border-orange-400 rounded-md w-[300px] p-4 max-h-[430px] overflow-y-scroll">
         <div className="space-y-2">
           <img
             src=""
@@ -42,11 +42,18 @@ const ProfileMenu = () => {
               My Art&Craft List
             </Link>
             <Link
-              to={'profile'}
               className="py-1.5 border rounded-md w-full px-3 hover:border-orange-400 duration-150"
+              to={'/all-art-craft-items'}
             >
-              Setting
+              All Art & craft Items
             </Link>
+            <Link
+              className="py-1.5 border rounded-md w-full px-3 hover:border-orange-400 duration-150"
+              to={'/add-craft-item'}
+            >
+              Add Craft Items
+            </Link>
+
             <Link className="py-1.5 border rounded-md w-full px-3 hover:border-orange-400 duration-150">
               Privecy policy
             </Link>
