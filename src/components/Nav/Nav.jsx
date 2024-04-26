@@ -168,6 +168,7 @@ const Nav = () => {
                 </div>
               )}
             </div>
+            {/* Logo */}
             <Link
               to={'/'}
               className="text-3xl font-extrabold bg-white px-2 rounded-full"
@@ -175,29 +176,30 @@ const Nav = () => {
               <img className="h-12 lg:h-[55px]" src={logo} alt="" />
             </Link>
           </div>
+          {/* Learge screen Menu  */}
           <div className="navbar-center hidden lg:flex">
             <ul className="navManu menu menu-horizontal px-1 flex gap-6 text-white">
               <NavLink
                 to={'/'}
-                className="w-28 py-3 px-3 text-center font-semibold text-firstColor rounded-md border hover:border-firstColor"
+                className="w-28 py-2 border-2 px-3 text-center font-semibold text-white rounded-md hover:border-firstColor"
               >
                 Home
               </NavLink>
               <NavLink
                 to={'/all-art-craft-items'}
-                className="py-3 px-3 text-center font-semibold text-firstColor rounded-md border hover:border-firstColor"
+                className="py-2 border-2 px-3 text-center font-semibold text-white rounded-md hover:border-firstColor"
               >
                 All Art & craft Items
               </NavLink>
               <NavLink
                 to={'/add-craft-item'}
-                className="py-3 px-3 text-center font-semibold text-firstColor rounded-md border hover:border-firstColor"
+                className="py-2 border-2 px-3 text-center font-semibold text-white rounded-md hover:border-firstColor"
               >
                 Add Craft Item
               </NavLink>
               <NavLink
                 to={'/my-art-craft-list'}
-                className="py-3 px-3 text-center font-semibold text-firstColor rounded-md border hover:border-firstColor"
+                className="py-2 border-2 px-3 text-center font-semibold text-white rounded-md hover:border-firstColor"
               >
                 My Art&Craft List
               </NavLink>

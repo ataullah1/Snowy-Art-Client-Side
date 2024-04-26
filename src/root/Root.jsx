@@ -41,7 +41,7 @@ const Root = () => {
       <div
         className={
           scrolled
-            ? 'fixed top-0 left-0 right-0 bg-[#c0c0c0b5] z-50 w-full mx-auto max-w-[1700px] text-white'
+            ? 'fixed top-0 left-0 right-0 bg-[#0000006b] z-50 w-full mx-auto max-w-[1700px] text-white'
             : 'bg-transparent fixed top-0 left-0 right-0 z-50 w-full mx-auto max-w-[1700px]'
         }
       >

@@ -99,7 +99,7 @@ const Banner = () => {
         </SwiperSlide>
       </Swiper>
       <div className="h-[400px] md:min-h-screen absolute top-0 left-0 z-10 w-full flex items-center justify-center ">
-        <h1 className="bannerFont text-6xl text-white text-center">
+        <h1 className="bannerFont text-4xl md:text-6xl text-white text-center max-w-[700px] mx-auto">
           <Typewriter
             cursor
             cursorBlinking
@@ -108,7 +108,12 @@ const Banner = () => {
             deleteSpeed={25}
             loop={0}
             typeSpeed={95}
-            words={['Hello World', 'Welcome to', 'React Simple Typewriter']}
+            words={[
+              'Discover the Magic of Snowy Artistry',
+              'Embrace the Chill with Creative Crafts',
+              'Crafting Cozy Moments in the Snow',
+              'Unleash Your Imagination in Snowy Art',
+            ]}
           />
         </h1>
       </div>

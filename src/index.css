@@ -124,7 +124,8 @@ button {
 
 /* Nav Active CSS */
 .navManu a.active {
-  border: 1px solid #fa983a;
+  border: 2px solid #fa983a;
+  color: #fa983a;
 }
 
 /* Loding Spinner code  */
