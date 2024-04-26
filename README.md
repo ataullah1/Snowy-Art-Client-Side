@@ -41,7 +41,7 @@ To install and run SnowyNest locally, follow these steps:
 1. Clone the repository:
 
    ```
-   git clone https://github.com/programming-hero-web-course-4/b9a9-real-estate-ataullah1
+   git clone https://github.com/programming-hero-web-course-4/B9A10-client-side-ataullah1.git
    ```
 
 2. Navigate into the project directory:
@@ -71,10 +71,10 @@ To install and run SnowyNest locally, follow these steps:
   npm install react-router-dom localforage match-sorter sort-by
   ```
 
-- **React Icon**
+- **Using All Packages**
 
   ```
-  npm install react-icons swiper react-firebase react-hook-form sweetalert2 react-fast-marquee react-helmet aos react-tooltip react-simple-typewriter
+  npm install react-icons swiper firebase react-hook-form sweetalert2 react-fast-marquee react-helmet aos react-tooltip react-simple-typewriter
   ```
 
 5. Run the development server:

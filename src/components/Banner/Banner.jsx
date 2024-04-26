@@ -46,27 +46,7 @@ const Banner = () => {
             <div
               className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed"
               style={{ backgroundColor: ' rgba(0, 0, 0, 0.6)' }}
-            >
-              <div className="h-full w-full flex items-center justify-center">
-                <h1 className="bannerFont text-6xl text-white">
-                  <Typewriter
-                    cursor
-                    cursorBlinking
-                    cursorColor="#fa983a"
-                    delaySpeed={1000}
-                    deleteSpeed={25}
-                    loop={0}
-                    typeSpeed={75}
-                    words={[
-                      'Hello World',
-                      'Welcome to',
-                      'React Simple Typewriter',
-                      'A Simple React Component/Hook for adding a nice Typewriter effect to your project.',
-                    ]}
-                  />
-                </h1>
-              </div>
-            </div>
+            ></div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -79,7 +59,6 @@ const Banner = () => {
               backgroundRepeat: 'no-repeat',
             }}
           >
-            {' '}
             <div
               className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed"
               style={{ backgroundColor: ' rgba(0, 0, 0, 0.6)' }}
@@ -96,7 +75,6 @@ const Banner = () => {
               backgroundRepeat: 'no-repeat',
             }}
           >
-            {' '}
             <div
               className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed"
               style={{ backgroundColor: ' rgba(0, 0, 0, 0.6)' }}
@@ -113,7 +91,6 @@ const Banner = () => {
               backgroundRepeat: 'no-repeat',
             }}
           >
-            {' '}
             <div
               className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed"
               style={{ backgroundColor: ' rgba(0, 0, 0, 0.6)' }}
@@ -121,6 +98,20 @@ const Banner = () => {
           </div>
         </SwiperSlide>
       </Swiper>
+      <div className="h-[400px] md:min-h-screen absolute top-0 left-0 z-10 w-full flex items-center justify-center ">
+        <h1 className="bannerFont text-6xl text-white text-center">
+          <Typewriter
+            cursor
+            cursorBlinking
+            cursorColor="#fa983a"
+            delaySpeed={1000}
+            deleteSpeed={25}
+            loop={0}
+            typeSpeed={95}
+            words={['Hello World', 'Welcome to', 'React Simple Typewriter']}
+          />
+        </h1>
+      </div>
     </div>
   );
 };
