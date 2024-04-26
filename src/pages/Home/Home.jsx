@@ -1,3 +1,4 @@
+import ArtCraftCategoriesSection from '../../components/ArtCraftCategoriesSection/ArtCraftCategoriesSection';
 import Banner from '../../components/Banner/Banner';
 import CraftItemsSection from '../../components/CraftItemsSection/CraftItemsSection';
 
@@ -7,6 +8,7 @@ const Home = () => {
       <Banner />
       <div className="w-11/12 mx-auto">
         <CraftItemsSection />
+        <ArtCraftCategoriesSection />
       </div>
     </div>
   );

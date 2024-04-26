@@ -6,11 +6,13 @@ import Root from '../root/Root';
 import AllArtCraftItems from '../pages/AllArtCraftItems/AllArtCraftItems';
 import AddCraftItems from '../pages/AddCraftItems/AddCraftItems';
 import MyArtCraftList from '../pages/MyArtCraftList/MyArtCraftList';
+import ErrorNotFound from '../pages/ErrorNotFound/ErrorNotFound';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
+    errorElement: <ErrorNotFound />,
     children: [
       {
         path: '/',
