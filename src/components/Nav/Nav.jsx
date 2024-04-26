@@ -40,7 +40,7 @@ const Nav = () => {
           <div className="navbar-start flex items-center flex-row-reverse justify-between w-full sm:w-auto sm:flex-row">
             <div className="flex gap-4 items-center">
               <div className="sm:hidden">
-                <label className="swap swap-rotate">
+                <label className="swap swap-rotate text-slate-100">
                   {/* this hidden checkbox controls the state */}
                   <input
                     type="checkbox"
@@ -205,7 +205,7 @@ const Nav = () => {
           </div>
           <div className="navbar-end flex items-center gap-3 w-40">
             <div className="hidden sm:block">
-              <label className="swap swap-rotate">
+              <label className="swap swap-rotate text-slate-100">
                 {/* this hidden checkbox controls the state */}
                 <input
                   type="checkbox"

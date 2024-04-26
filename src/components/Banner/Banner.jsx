@@ -1,3 +1,7 @@
+import slide1 from '../../assets/banner/img1.jpg';
+import slide2 from '../../assets/banner/img2.jpg';
+import slide3 from '../../assets/banner/img3.png';
+import slide4 from '../../assets/banner/img4.png';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
@@ -5,42 +9,99 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 // import required modules
-import {
-  Autoplay,
-  Pagination,
-  Navigation,
-  Keyboard,
-  EffectFade,
-} from 'swiper/modules';
+import { Pagination, Navigation, Autoplay, Keyboard } from 'swiper/modules';
 
 const Banner = () => {
   return (
-    <div className="min-h-screen">
-      <div className="mt-14 md:mt-20">
-        <Swiper
-          spaceBetween={30}
-          effect={'fade'}
-          navigation={true}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[EffectFade, Navigation, Pagination]}
-          className="mySwiper"
-        >
-          <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-          </SwiperSlide>
-        </Swiper>
-      </div>
+    <div className="min-h-screen bg-red-200">
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        loop={true}
+        autoplay={{
+          delay: 3300,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        keyboard={{
+          enabled: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation, Keyboard]}
+        className="mySwiper h-[400px] md:min-h-screen"
+      >
+        <SwiperSlide>
+          <div
+            className="h-full bg-cover bg-no-repeat p-12 text-center "
+            style={{
+              backgroundImage: `url(${slide1})`,
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+            }}
+          >
+            <div
+              className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed"
+              style={{ backgroundColor: ' rgba(0, 0, 0, 0.6)' }}
+            >
+              <h1 className="bannerFont text-6xl text-white">Hello</h1>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div
+            className="h-full bg-cover bg-no-repeat p-12 text-center"
+            style={{
+              backgroundImage: `url(${slide2})`,
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+            }}
+          >
+            {' '}
+            <div
+              className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed"
+              style={{ backgroundColor: ' rgba(0, 0, 0, 0.6)' }}
+            ></div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div
+            className="h-full bg-cover bg-no-repeat p-12 text-center"
+            style={{
+              backgroundImage: `url(${slide3})`,
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+            }}
+          >
+            {' '}
+            <div
+              className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed"
+              style={{ backgroundColor: ' rgba(0, 0, 0, 0.6)' }}
+            ></div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div
+            className="h-full bg-cover bg-no-repeat p-12 text-center"
+            style={{
+              backgroundImage: `url(${slide4})`,
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+            }}
+          >
+            {' '}
+            <div
+              className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed"
+              style={{ backgroundColor: ' rgba(0, 0, 0, 0.6)' }}
+            ></div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
     </div>
   );
 };
