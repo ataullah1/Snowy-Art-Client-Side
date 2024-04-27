@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom';
 import { BiHeart } from 'react-icons/bi';
 import { FaStar } from 'react-icons/fa';
 import { FaRegStarHalfStroke } from 'react-icons/fa6';
+import { AiOutlineFullscreen } from 'react-icons/ai';
 
-const ItemSingleCard = ({ data }) => {
+const ItemSingleCard = ({ data, imageFullScreen }) => {
   console.log(data);
-  const { photo, price, category, itemName, description, rating } = data;
+  const { photo, price, category, itemName, description, rating, stockStatus } =
+    data;
+
   return (
     <div className="rounded-lg border-2 border-firstColor w-full min-h-72 p-2 hover:shadow-lg duration-300 hover:scale-[1.03]">
       <div className="rounded-md h-56 w-full overflow-hidden relative">
@@ -24,12 +27,19 @@ const ItemSingleCard = ({ data }) => {
             style={{ backgroundColor: ' rgba(0, 0, 0, 0.4)' }}
           ></div>
         </div>
-        <div className="flex justify-between items-center absolute w-full bottom-0 z-20 px-3 pb-3">
-          <h1 className="text-white text-3xl font-bold italic">${price}</h1>
-          <button className="text-white bg-slate-600 p-1 text-2xl rounded-md hover:text-firstColor">
-            <BiHeart />
-          </button>
+
+        <div className="absolute top-2 left-2 z-20 py-1 w-20 text-sm rounded text-white bg-secondColor font-semibold text-center">
+          {stockStatus}
         </div>
+        <button
+          onClick={() => imageFullScreen(photo)}
+          className="absolute bottom-2 z-20 left-2 text-white bg-slate-500 p-1 text-2xl rounded-md hover:text-firstColor"
+        >
+          <AiOutlineFullscreen />
+        </button>
+        <button className="absolute bottom-2 z-20 right-2 text-white bg-slate-500 p-1 text-2xl rounded-md hover:text-firstColor">
+          <BiHeart />
+        </button>
       </div>
       <div className="">
         <h3 className="text-left font-bold text-secondColor pt-3">
@@ -68,4 +78,5 @@ const ItemSingleCard = ({ data }) => {
 export default ItemSingleCard;
 ItemSingleCard.propTypes = {
   data: PropTypes.object,
+  imageFullScreen: PropTypes.func,
 };

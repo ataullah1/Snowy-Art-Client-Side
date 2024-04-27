@@ -2,11 +2,39 @@ import { useState } from 'react';
 import { MdArrowRightAlt } from 'react-icons/md';
 import ItemSingleCard from './ItemSingleCard';
 import { PropTypes } from 'prop-types';
+import { CgClose } from 'react-icons/cg';
 const CraftItemsSection = ({ dta }) => {
   const [showDta, setShowDta] = useState(6);
   // console.log(dta);
+  const [imgFullScreen, setImgFullScreen] = useState();
+  const imageFullScreen = (img) => {
+    // console.log(img);
+    setImgFullScreen(img);
+    document.getElementById('my_modal_3').showModal();
+  };
   return (
     <div className="pb-14">
+      {/* Modal open image  */}
+      <dialog id="my_modal_3" className="modal">
+        <div className="modal-box h-[500px] w-[500] relative border border-firstColor">
+          <form method="dialog">
+            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-2xl bg-slate-700 text-white hover:text-firstColor hover:bg-white border-2 border-slate-700 hover:border-firstColor">
+              <CgClose />
+            </button>
+          </form>
+          <div
+            className="h-full w-full bg-cover bg-no-repeat rounded-md"
+            style={{
+              backgroundImage: `url(${imgFullScreen})`,
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+            }}
+          ></div>
+        </div>
+      </dialog>
+      {/* // Modal End */}
+
       <div>
         <h1 className="text-3xl md:text-5xl text-center pt-10 md:pt-20 font-bold pb-2">
           Art & Craft Items
@@ -20,7 +48,11 @@ const CraftItemsSection = ({ dta }) => {
       <div>
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {dta.slice(0, showDta).map((data) => (
-            <ItemSingleCard key={data._id} data={data} />
+            <ItemSingleCard
+              key={data._id}
+              data={data}
+              imageFullScreen={imageFullScreen}
+            />
           ))}
         </div>
         {showDta < dta.length && (
