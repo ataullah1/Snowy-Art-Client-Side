@@ -6,7 +6,7 @@ import { FaRegStarHalfStroke } from 'react-icons/fa6';
 import { AiOutlineFullscreen } from 'react-icons/ai';
 
 const ItemSingleCard = ({ data, imageFullScreen }) => {
-  console.log(data);
+  // console.log(data);
   const { photo, price, category, itemName, description, rating, stockStatus } =
     data;
 
