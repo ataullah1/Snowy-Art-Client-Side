@@ -7,6 +7,7 @@ import AllArtCraftItems from '../pages/AllArtCraftItems/AllArtCraftItems';
 import AddCraftItems from '../pages/AddCraftItems/AddCraftItems';
 import MyArtCraftList from '../pages/MyArtCraftList/MyArtCraftList';
 import ErrorNotFound from '../pages/ErrorNotFound/ErrorNotFound';
+import ArtAndCraftDetails from '../pages/ViewDetailsPage/ArtAndCraftDetails';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
       {
         path: '/all-art-craft-items',
         element: <AllArtCraftItems />,
+        loader: () => fetch('http://localhost:3000/all-art-craft-items'),
+      },
+      {
+        path: '/item-details/:id',
+        element: <ArtAndCraftDetails />,
         loader: () => fetch('http://localhost:3000/all-art-craft-items'),
       },
       {

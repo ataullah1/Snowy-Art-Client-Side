@@ -7,8 +7,16 @@ import { AiOutlineFullscreen } from 'react-icons/ai';
 
 const ItemSingleCard = ({ data, imageFullScreen }) => {
   // console.log(data);
-  const { photo, price, category, itemName, description, rating, stockStatus } =
-    data;
+  const {
+    _id,
+    photo,
+    price,
+    category,
+    itemName,
+    description,
+    rating,
+    stockStatus,
+  } = data;
 
   return (
     <div className="rounded-lg border-2 border-firstColor w-full min-h-72 p-2 hover:shadow-lg duration-300 hover:scale-[1.03]">
@@ -65,7 +73,7 @@ const ItemSingleCard = ({ data, imageFullScreen }) => {
             </h1>
           </div>
         </div>
-        <Link to={'/'}>
+        <Link to={`/item-details/${_id}`}>
           <button className="w-full px-2 py-2 border-2 border-firstColor bg-transparent hover:bg-firstColor text-firstColor hover:text-white font-bold rounded-md duration-150 active:scale-95">
             View Details
           </button>
