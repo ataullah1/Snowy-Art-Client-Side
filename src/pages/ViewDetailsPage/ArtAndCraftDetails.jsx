@@ -3,6 +3,8 @@ import img1 from '../../assets/banner/img4.png';
 import { FaStar } from 'react-icons/fa';
 import { FaRegStarHalfStroke } from 'react-icons/fa6';
 import { AiOutlineFullscreen } from 'react-icons/ai';
+import { BiShareAlt } from 'react-icons/bi';
+import { HiOutlineHeart } from 'react-icons/hi';
 
 const ArtAndCraftDetails = () => {
   const { id } = useParams();
@@ -40,11 +42,11 @@ const ArtAndCraftDetails = () => {
         </div>
       </div>
       <div className="w-11/12 mx-auto mt-10">
-        <div className="rounded-lg border-2 border-firstColor max-w-[500px] md:max-w-[800px] mx-auto hover:shadow-lg">
+        <div className="rounded-lg border-2 border-firstColor max-w-[700px] lg:max-w-full mx-auto hover:shadow-lg flex flex-col lg:flex-row gap-3 lg:gap-5">
           {/* Banner Image */}
-          <div className="rounded-t-md h-96 md:h-[500px] w-full overflow-hidden relative">
+          <div className="rounded-l-md h-80 sm:h-96 md:h-[500px] w-full lg:w-2/5 overflow-hidden relative">
             <div
-              className="h-full bg-cover bg-no-repeat p-12 text-center rounded-t-md relative duration-[2s]"
+              className="h-full bg-cover bg-no-repeat p-12 text-center rounded-l-md relative duration-[2s]"
               style={{
                 backgroundImage: `url(${photo})`,
                 backgroundPosition: 'center',
@@ -52,10 +54,10 @@ const ArtAndCraftDetails = () => {
                 backgroundRepeat: 'no-repeat',
               }}
             >
-              <div
-                className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed rounded-t-md"
+              {/* <div
+                className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed rounded-l-md"
                 style={{ backgroundColor: ' rgba(0, 0, 0, 0.4)' }}
-              ></div>
+              ></div> */}
             </div>
 
             <button
@@ -66,16 +68,9 @@ const ArtAndCraftDetails = () => {
             </button>
           </div>
           {/* Content */}
-          <div className="sm:px-5">
-            <h1 className="text-3xl font-bold pt-3 text-firstColor">
-              $ {price}
-            </h1>
-            <h3 className="text-xl text-left font-bold text-secondColor pt-3">
-              {category}
-            </h3>
-            <h1 className="text-4xl font-bold  pb-3">{itemName}</h1>
-            <p className="pb-3 flex flex-grow text-lg">{description}</p>
-            <div className="flex gap-4 items-center pb-4 justify-between">
+          <div className="w-full lg:w-3/5 pt-3">
+            <h1 className="text-4xl font-bold  pb-3">{itemName}</h1>{' '}
+            <div className="flex justify-between">
               <div className="text-xl flex gap-2 items-center">
                 <div className="flex gap-1 text-firstColor">
                   <FaStar />
@@ -84,9 +79,28 @@ const ArtAndCraftDetails = () => {
                   <FaStar />
                   <FaRegStarHalfStroke />
                 </div>
-                <p>({rating})</p>
+                <p className="text-secondColor cursor-pointer hover:underline">
+                  ({rating}) Ratings
+                </p>
+              </div>
+              <div className="text-2xl md:text-3xl flex gap-4 pr-5">
+                <span className="cursor-pointer hover:text-firstColor">
+                  <BiShareAlt />
+                </span>
+                <span className="cursor-pointer hover:text-firstColor">
+                  <HiOutlineHeart />
+                </span>
               </div>
             </div>
+            <hr className="my-5" />
+            <h1 className="text-3xl font-bold pt-3 text-firstColor">
+              $ {price}
+            </h1>
+            <h3 className="text-xl text-left font-bold text-secondColor pt-3">
+              {category}
+            </h3>
+            <p className="pb-3 flex flex-grow text-lg">{description}</p>
+            <div className="flex gap-4 items-center pb-4 justify-between"></div>
           </div>
         </div>
       </div>
