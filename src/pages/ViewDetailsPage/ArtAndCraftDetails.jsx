@@ -5,14 +5,44 @@ import { FaRegStarHalfStroke } from 'react-icons/fa6';
 import { AiOutlineFullscreen } from 'react-icons/ai';
 import { BiShareAlt } from 'react-icons/bi';
 import { HiOutlineHeart } from 'react-icons/hi';
+import Swal from 'sweetalert2';
 
 const ArtAndCraftDetails = () => {
   const { id } = useParams();
   const allDta = useLoaderData();
   const filterDta = allDta.find((dta) => dta._id === id);
   //   console.log(filterDta);
-  const { photo, price, category, itemName, description, rating, stockStatus } =
-    filterDta;
+  const {
+    photo,
+    price,
+    category,
+    itemName,
+    description,
+    rating,
+    stockStatus,
+    customization,
+    processing_time,
+  } = filterDta;
+
+  // buy add card alart
+  const handleBuy = () => {
+    Swal.fire({
+      // position: 'top-end',
+      icon: 'success',
+      title: 'You have successfully purchased this item.',
+      showConfirmButton: true,
+      timer: 2500,
+    });
+  };
+  const handleAddToCard = () => {
+    Swal.fire({
+      // position: 'top-end',
+      icon: 'success',
+      title: 'You have successfully added this item to the card.',
+      showConfirmButton: true,
+      timer: 2500,
+    });
+  };
   return (
     <div>
       <div className="h-48 md:h-64 bg-fuchsia-100">
@@ -44,7 +74,7 @@ const ArtAndCraftDetails = () => {
       <div className="w-11/12 mx-auto mt-10">
         <div className="rounded-lg border-2 border-firstColor max-w-[700px] lg:max-w-full mx-auto hover:shadow-lg flex flex-col lg:flex-row gap-3 lg:gap-5">
           {/* Banner Image */}
-          <div className="rounded-l-md h-80 sm:h-96 md:h-[500px] w-full lg:w-2/5 overflow-hidden relative">
+          <div className="rounded-l-md h-80 sm:h-96 md:h-[500px] w-full lg:w-2/5 overflow-hidden relative border-r">
             <div
               className="h-full bg-cover bg-no-repeat p-12 text-center rounded-l-md relative duration-[2s]"
               style={{
@@ -68,8 +98,10 @@ const ArtAndCraftDetails = () => {
             </button>
           </div>
           {/* Content */}
-          <div className="w-full lg:w-3/5 pt-3">
-            <h1 className="text-4xl font-bold  pb-3">{itemName}</h1>{' '}
+          <div className="w-full lg:w-3/5 p-4 lg:p-0">
+            <h1 className="text-3xl sm:text-4xl font-bold pb-4 pt-5">
+              {itemName}
+            </h1>{' '}
             <div className="flex justify-between">
               <div className="text-xl flex gap-2 items-center">
                 <div className="flex gap-1 text-firstColor">
@@ -84,23 +116,73 @@ const ArtAndCraftDetails = () => {
                 </p>
               </div>
               <div className="text-2xl md:text-3xl flex gap-4 pr-5">
-                <span className="cursor-pointer hover:text-firstColor">
+                <span className="cursor-pointer hover:text-firstColor hover:scale-125 duration-300">
                   <BiShareAlt />
                 </span>
-                <span className="cursor-pointer hover:text-firstColor">
+                <span className="cursor-pointer hover:text-firstColor hover:scale-125 duration-300">
                   <HiOutlineHeart />
                 </span>
               </div>
             </div>
-            <hr className="my-5" />
-            <h1 className="text-3xl font-bold pt-3 text-firstColor">
+            <hr className="my-4" />
+            <h1 className="text-4xl font-semibold text-firstColor heightFont">
               $ {price}
             </h1>
-            <h3 className="text-xl text-left font-bold text-secondColor pt-3">
-              {category}
+            <p className="pt-5 flex flex-grow text-base max-w-[600px]">
+              {description}
+            </p>
+            <h3 className="text-xl text-left font-bold text-secondColor pt-2">
+              <span>Categories: </span>
+              <span className="px-2 border rounded text-firstColor">
+                {' '}
+                {category}
+              </span>
             </h3>
-            <p className="pb-3 flex flex-grow text-lg">{description}</p>
-            <div className="flex gap-4 items-center pb-4 justify-between"></div>
+            <h3 className="text-xl text-left font-bold text-secondColor pt-2">
+              <span>Stock Status: </span>
+              <span className="px-2 border rounded text-firstColor">
+                {' '}
+                {stockStatus}
+              </span>
+            </h3>
+            <h3 className="text-xl text-left font-bold text-secondColor pt-2">
+              <span>Processing Time: </span>
+              <span className="px-2 border rounded text-firstColor">
+                {' '}
+                {processing_time.length === 1
+                  ? '0' + processing_time
+                  : processing_time}{' '}
+                Hours
+              </span>
+            </h3>
+            <h3 className="text-xl text-left font-bold text-secondColor pt-2">
+              <span>Customization: </span>
+              <span className="px-2 border rounded text-firstColor">
+                {' '}
+                {customization}
+              </span>
+            </h3>
+            <h3 className="text-lg text-left font-semibold pt-1">
+              <span>Published by: </span>
+              <span className="px-2">
+                {' '}
+                {filterDta?.userName || 'Username not added'}
+              </span>
+            </h3>
+            <div className="flex gap-5 items-center pt-2">
+              <button
+                className="w-40 py-2 font-semibold text-white hover:-translate-y-1 duration-200 bg-firstColor hover:bg-[#d78130]"
+                onClick={handleBuy}
+              >
+                Buy Now
+              </button>
+              <button
+                className="w-40 py-2 font-semibold text-white hover:-translate-y-1 duration-200 bg-secondColor hover:bg-[#2d8e8b]"
+                onClick={handleAddToCard}
+              >
+                Add to Card
+              </button>
+            </div>
           </div>
         </div>
       </div>

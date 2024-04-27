@@ -38,10 +38,10 @@ const Nav = () => {
     <div className="">
       <Tooltip id="my-tooltip" />
       <div className="w-11/12 mx-auto max-w-[1700px]">
-        <div className=" navbar flex items-center flex-col sm:flex-row sm:justify-between">
+        <div className=" navbar flex items-end flex-col sm:flex-row sm:justify-between">
           <div className="navbar-start flex items-center flex-row-reverse justify-between w-full sm:w-auto sm:flex-row">
             <div className="flex gap-4 items-center">
-              <div className="sm:hidden">
+              <div className="sm:hidden pt-1">
                 <label className="swap swap-rotate text-slate-100">
                   {/* this hidden checkbox controls the state */}
                   <input
@@ -207,7 +207,7 @@ const Nav = () => {
               </NavLink>
             </ul>
           </div>
-          <div className="navbar-end flex items-center gap-3 w-40">
+          <div className="navbar-end flex items-baseline gap-2 w-40">
             <div className="hidden sm:block">
               <label className="swap swap-rotate text-slate-100">
                 {/* this hidden checkbox controls the state */}
@@ -221,7 +221,7 @@ const Nav = () => {
 
                 {/* sun icon */}
                 <svg
-                  className="swap-off fill-current w-10 h-10"
+                  className="swap-off fill-current sm:w-10 sm:h-10"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                 >
@@ -230,7 +230,7 @@ const Nav = () => {
 
                 {/* moon icon */}
                 <svg
-                  className="swap-on fill-current w-10 h-10"
+                  className="swap-on fill-current sm:w-10 sm:h-10"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                 >
@@ -269,12 +269,12 @@ const Nav = () => {
                 </div>
               </div>
             ) : (
-              <div className=" gap-4 hidden sm:flex">
+              <div className="hidden sm:block">
                 <Link
                   onClick={() =>
                     document.getElementById('my_modal_1').showModal()
                   }
-                  className="font-semibold bg-firstColor px-5 sm:px-8 py-2 rounded-md active:scale-90 duration-100 text-white button2"
+                  className="font-semibold bg-firstColor px-5 xl:px-8 rounded-md active:scale-90 duration-100 text-white button2"
                 >
                   <span className="flex items-center gap-2">
                     <FiUserPlus /> Account

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -27,6 +28,9 @@
 /* Banner Font */
 .bannerFont {
   font-family: 'Kalam', cursive;
+}
+.heightFont {
+  font-family: 'Oswald', sans-serif;
 }
 
 body {
@@ -77,13 +81,16 @@ button {
   display: inline-block;
   transition: all 0.2s ease-in;
   position: relative;
+  top: 3px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   overflow: hidden;
+
   z-index: 1;
   /* color: #090909; */
-  padding: 0.7em 1.7em;
   cursor: pointer;
-  font-size: 18px;
-  border-radius: 0.5em;
+  font-size: 17px;
+  border-radius: 6px;
   background: #fa983a;
   border: 1px solid #fa983a;
   /* box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff; */

@@ -74,7 +74,7 @@ const ItemSingleCard = ({ data, imageFullScreen }) => {
           </div>
         </div>
         <Link to={`/item-details/${_id}`}>
-          <button className="w-full px-2 py-2 border-2 border-firstColor bg-transparent hover:bg-firstColor text-firstColor hover:text-white font-bold rounded-md duration-150 active:scale-95">
+          <button className="w-full px-2 py-2 border-2 border-firstColor hover:bg-transparent bg-firstColor hover:text-firstColor text-white font-bold rounded-md duration-150 active:scale-95">
             View Details
           </button>
         </Link>

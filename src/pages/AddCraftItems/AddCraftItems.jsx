@@ -1,7 +1,11 @@
 import Swal from 'sweetalert2';
 import banner from '../../assets/banner/img9.jpg';
+import { useContext } from 'react';
+import { ContextAuth } from '../../provider/Provider';
 
 const AddCraftItems = () => {
+  const { userDta } = useContext(ContextAuth);
+  // console.log(userDta);
   const handleArtCraftItem = (e) => {
     e.preventDefault();
     const dta = e.target;
@@ -14,6 +18,8 @@ const AddCraftItems = () => {
     const price = dta.price.value;
     const photo = dta.photo.value;
     const description = dta.description.value;
+    const userName = userDta?.displayName || 'Username not added';
+    const email = userDta.email;
     const formData = {
       itemName,
       category,
@@ -24,6 +30,8 @@ const AddCraftItems = () => {
       price,
       photo,
       description,
+      userName,
+      email,
     };
     // console.log(formData);
     fetch('http://localhost:3000/add-art-craft-items', {
@@ -123,12 +131,12 @@ const AddCraftItems = () => {
             <div className="flex flex-col md:flex-row gap-5">
               <div className="flex flex-col gap-2 w-full md:w-1/2">
                 <label className=" text-opacity-80 text-lg font-semibold">
-                  Processing Time
+                  Processing Time (hours)
                 </label>
                 <input
                   required
                   className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border"
-                  type="text"
+                  type="number"
                   name="processing_time"
                   placeholder="Enter processing time"
                 />
