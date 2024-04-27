@@ -50,7 +50,10 @@ const ItemSingleCard = ({ data }) => {
             <p>({rating})</p>
           </div>
           <div>
-            <h1 className="text-2xl font-bold pr-3">${price}</h1>
+            <h1 className="text-2xl font-bold pr-3">
+              <span className="text-firstColor">$</span>
+              {price}
+            </h1>
           </div>
         </div>
         <Link to={'/'}>
