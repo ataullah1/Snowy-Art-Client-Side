@@ -6,10 +6,9 @@ import { FaRegStarHalfStroke } from 'react-icons/fa6';
 
 const ItemSingleCard = ({ data }) => {
   console.log(data);
-  const { photo, price, category, itemName, description, rating, stockStatus } =
-    data;
+  const { photo, price, category, itemName, description, rating } = data;
   return (
-    <div className="rounded-lg border-2 border-firstColor w-full min-h-72 p-2 hover:shadow-lg duration-150">
+    <div className="rounded-lg border-2 border-firstColor w-full min-h-72 p-2 hover:shadow-lg duration-300 hover:scale-[1.03]">
       <div className="rounded-md h-56 w-full overflow-hidden relative">
         <div
           className="h-full bg-cover bg-no-repeat p-12 text-center rounded-md relative hover:scale-110 hover:rotate-3 duration-[2s]"

@@ -23,7 +23,7 @@ const CraftItemsSection = ({ dta }) => {
             <ItemSingleCard key={data._id} data={data} />
           ))}
         </div>
-        {showDta !== dta.length && (
+        {showDta < dta.length && (
           <p
             data-aos="fade-down"
             className="py-2 px-4 text-center cursor-pointer mt-8 underline flex items-center gap-2 justify-center hover:text-redLi text-lg"
