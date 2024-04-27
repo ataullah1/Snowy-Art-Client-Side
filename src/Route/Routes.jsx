@@ -8,6 +8,7 @@ import AddCraftItems from '../pages/AddCraftItems/AddCraftItems';
 import MyArtCraftList from '../pages/MyArtCraftList/MyArtCraftList';
 import ErrorNotFound from '../pages/ErrorNotFound/ErrorNotFound';
 import ArtAndCraftDetails from '../pages/ViewDetailsPage/ArtAndCraftDetails';
+import PrivetRoute from './PrivetRoute';
 
 const router = createBrowserRouter([
   {
@@ -27,16 +28,28 @@ const router = createBrowserRouter([
       },
       {
         path: '/item-details/:id',
-        element: <ArtAndCraftDetails />,
+        element: (
+          <PrivetRoute>
+            <ArtAndCraftDetails />
+          </PrivetRoute>
+        ),
         loader: () => fetch('http://localhost:3000/all-art-craft-items'),
       },
       {
         path: '/add-craft-item',
-        element: <AddCraftItems />,
+        element: (
+          <PrivetRoute>
+            <AddCraftItems />
+          </PrivetRoute>
+        ),
       },
       {
         path: '/my-art-craft-list',
-        element: <MyArtCraftList />,
+        element: (
+          <PrivetRoute>
+            <MyArtCraftList />
+          </PrivetRoute>
+        ),
       },
       {
         path: '/login',

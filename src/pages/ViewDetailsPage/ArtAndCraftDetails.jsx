@@ -45,6 +45,7 @@ const ArtAndCraftDetails = () => {
   };
   return (
     <div>
+      {/* Top Banner Img */}
       <div className="h-48 md:h-64 bg-fuchsia-100">
         <div className="h-full w-full overflow-hidden">
           <div
@@ -61,7 +62,7 @@ const ArtAndCraftDetails = () => {
               style={{ backgroundColor: ' rgba(0, 0, 0, 0.6)' }}
             ></div>
           </div>
-          <div className="absolute z-30 left-1/2 -translate-x-1/2 text-2xl sm:text-2xl text-white font-bold text-center top-28 md:top-36 w-full italic">
+          <div className="absolute z-30 left-1/2 -translate-x-1/2 text-2xl sm:text-3xl text-white font-bold text-center top-28 md:top-36 w-full italic">
             <Link to={'/'}>
               <button className="italic">Home /</button>
             </Link>{' '}
@@ -71,6 +72,7 @@ const ArtAndCraftDetails = () => {
           </div>
         </div>
       </div>
+      {/* End Banner top */}
       <div className="w-11/12 mx-auto mt-10">
         <div className="rounded-lg border-2 border-firstColor max-w-[700px] lg:max-w-full mx-auto hover:shadow-lg flex flex-col lg:flex-row gap-3 lg:gap-5">
           {/* Banner Image */}
