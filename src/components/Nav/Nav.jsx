@@ -106,7 +106,7 @@ const Nav = () => {
                   <div
                     onClick={() => setView(!view)}
                     role="button"
-                    className="text-firstColor lg:hidden text-3xl"
+                    className="text-white lg:hidden text-3xl"
                   >
                     {view ? <IoClose /> : <MdMenu />}
                   </div>
@@ -114,7 +114,7 @@ const Nav = () => {
                     <ul className="navManu absolute mt-1 sm:mt-3 -ml-40 sm:ml-4 z-10 p-2 shadow rounded-box w-52 border-2 border-solid border-firstColor bg-slate-800 text-white flex flex-col gap-2 lg:hidden">
                       <div
                         onClick={() => setView(!view)}
-                        className="sm:hidden cursor-pointer text-firstColor text-3xl -translate-x-9 translate-y-1/2 top-[calc(50%-20px)] absolute"
+                        className="sm:hidden cursor-pointer text-secondColor hover:text-firstColor bg-slate-800 text-3xl -translate-x-10 translate-y-1/2 top-[calc(50%-20px)] absolute rounded-l-md border-l-2 border-y-2 border-firstColor"
                       >
                         <IoIosArrowForward />
                       </div>

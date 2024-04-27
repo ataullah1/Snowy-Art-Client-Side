@@ -1,7 +1,39 @@
+import { useLoaderData } from 'react-router-dom';
 import img1 from '../../assets/banner/img2.jpg';
+import ItemSingleCard from '../../components/CraftItemsSection/ItemSingleCard';
+import { useState } from 'react';
+import { CgClose } from 'react-icons/cg';
 const AllArtCraftItems = () => {
+  const data = useLoaderData();
+  const [imgFullScreen, setImgFullScreen] = useState();
+  const imageFullScreen = (img) => {
+    // console.log(img);
+    setImgFullScreen(img);
+    document.getElementById('my_modal_3').showModal();
+  };
   return (
-    <div>
+    <div className="pb-20">
+      {/* Modal open image  */}
+      <dialog id="my_modal_3" className="modal">
+        <div className="modal-box h-[500px] w-[500] relative border border-firstColor">
+          <form method="dialog">
+            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-2xl bg-slate-700 text-white hover:text-firstColor hover:bg-white border-2 border-slate-700 hover:border-firstColor">
+              <CgClose />
+            </button>
+          </form>
+          <div
+            className="h-full w-full bg-cover bg-no-repeat rounded-md"
+            style={{
+              backgroundImage: `url(${imgFullScreen})`,
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+            }}
+          ></div>
+        </div>
+      </dialog>
+      {/* // Modal End */}
+
       <div className="h-52 md:h-72 bg-fuchsia-100">
         <div className="rounded-t-md h-full w-full overflow-hidden">
           <div
@@ -18,6 +50,25 @@ const AllArtCraftItems = () => {
               style={{ backgroundColor: ' rgba(0, 0, 0, 0.6)' }}
             ></div>
           </div>
+          <h1 className="absolute z-30 left-1/2 -translate-x-1/2 text-2xl sm:text-3xl text-white md:text-5xl font-bold border-b-4 border-secondColor text-center top-32 md:top-44 w-72 sm:w-[350px] md:w-[550px]">
+            All Art And Craft Items
+          </h1>
+        </div>
+      </div>
+      <div className="w-11/12 mx-auto">
+        {/* <div className="flex flex-col items-center justify-center">
+          <h1 className="text-3xl md:text-5xl font-bold my-5 md:my-10 border-b-4 border-secondColor inline-block px-3">
+            All Art And Craft Items
+          </h1>
+        </div> */}
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+          {data.map((dta) => (
+            <ItemSingleCard
+              key={dta._id}
+              data={dta}
+              imageFullScreen={imageFullScreen}
+            />
+          ))}
         </div>
       </div>
     </div>

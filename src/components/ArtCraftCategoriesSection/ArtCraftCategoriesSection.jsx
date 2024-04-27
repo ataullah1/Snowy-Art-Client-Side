@@ -2,7 +2,7 @@ import { PropTypes } from 'prop-types';
 
 const ArtCraftCategoriesSection = ({ data }) => {
   return (
-    <div className='pb-10'>
+    <div className="pb-10">
       <div>
         <h1 className="text-3xl md:text-5xl text-center pt-5 font-bold pb-2">
           Art & Craft Categories
