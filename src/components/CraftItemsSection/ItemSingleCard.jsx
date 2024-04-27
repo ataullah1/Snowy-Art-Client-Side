@@ -1,64 +1,61 @@
-import { FaRegHeart } from 'react-icons/fa';
-// import card1 from '../../assets/sliderImg/card/17.jpg';
-import { SlSizeFullscreen } from 'react-icons/sl';
 import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
-// import card2 from '../../assets/sliderImg/card/2.jpg';
+import { BiHeart } from 'react-icons/bi';
+import { FaStar } from 'react-icons/fa';
+import { FaRegStarHalfStroke } from 'react-icons/fa6';
 
-const ItemSingleCard = ({ dta }) => {
-  // console.log(dta);
+const ItemSingleCard = ({ data }) => {
+  console.log(data);
+  const { photo, price, category, itemName, description, rating, stockStatus } =
+    data;
   return (
-    <div
-      data-aos="zoom-in"
-      className="bg-white min-w-[380px] max-w-[500px] mx-auto p-3 border rounded-lg hover:scale-105 duration-200 space-y-3 hover:shadow-xl"
-    >
-      <div className="relative w-full h-56">
-        <div className="relative w-full h-full">
-          <img
-            className="rounded-lg w-full h-full bg-cover overflow-hidden"
-            src={dta.image}
-            alt=""
-          />
-          <div className="absolute bg-[#00000047] w-full h-full top-0 left-0 right-0 bottom-0 rounded-lg"></div>
+    <div className="rounded-lg border-2 border-firstColor w-full min-h-72 p-2 hover:shadow-lg duration-150">
+      <div className="rounded-md h-56 w-full overflow-hidden relative">
+        <div
+          className="h-full bg-cover bg-no-repeat p-12 text-center rounded-md relative hover:scale-110 hover:rotate-3 duration-[2s]"
+          style={{
+            backgroundImage: `url(${photo})`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+          }}
+        >
+          <div
+            className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed rounded-md"
+            style={{ backgroundColor: ' rgba(0, 0, 0, 0.4)' }}
+          ></div>
         </div>
-        <div className="absolute bottom-3 w-full flex justify-between px-4 items-center">
-          <h1 className="text-2xl text-white font-bold">
-            {dta.price}
-            <span className="text-lg">/mo</span>
-          </h1>
-          <span className="text-white hover:text-redLi bg-[#17161689] p-2 rounded-md cursor-pointer">
-            <FaRegHeart />
-          </span>
+        <div className="flex justify-between items-center absolute w-full bottom-0 z-20 px-3 pb-3">
+          <h1 className="text-white text-3xl font-bold italic">${price}</h1>
+          <button className="text-white bg-slate-600 p-1 text-2xl rounded-md hover:text-firstColor">
+            <BiHeart />
+          </button>
         </div>
-        <button className="bg-redLi py-1 px-2 absolute top-3 right-3 rounded-md text-white text-sm">
-          For {dta.status}
-        </button>
       </div>
-      <div className="space-y-2 px-3">
-        <p className="text-redLi font-semibold">{dta.segment_name}</p>
-        <div className="sm:h-[90px] space-y-3">
-          <h1 className="text-2xl font-bold text-black">{dta.estate_title}</h1>
-          <p>{dta.estate_shot_description}.</p>
+      <div className="">
+        <h3 className="text-left font-bold text-secondColor pt-3">
+          {category}
+        </h3>
+        <h1 className="text-2xl font-bold  pb-3">{itemName}</h1>
+        <p className="pb-3 flex flex-grow sm:min-h-28">{description}</p>
+        <div className="flex gap-4 items-center pb-4 justify-between">
+          <div className="text-xl flex gap-2 items-center">
+            <div className="flex gap-1 text-firstColor">
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaRegStarHalfStroke />
+            </div>
+            <p>({rating})</p>
+          </div>
+          <div>
+            <h1 className="text-2xl font-bold pr-3">${price}</h1>
+          </div>
         </div>
-        <hr />
-        <div className="flex items-center justify-between py-2 gap-2 text-redLi">
-          <div className="bg-[#3bf5f853] py-1 px-2 flex items-center justify-center rounded gap-2 text-base font-semibold mx-auto">
-            <span className="text-xs">
-              <SlSizeFullscreen />
-            </span>
-            {dta.area} Sq Ft
-          </div>
-          <div className="bg-[#c9f15b67] py-1 px-2 flex items-center justify-center rounded gap-2 text-base font-semibold mx-auto">
-            {dta.facilities[2]}
-          </div>
-          <div className="bg-[#25eb8867] py-1 px-2 flex items-center justify-center rounded gap-2 text-base font-semibold mx-auto">
-            {dta.facilities[1]}
-          </div>
-        </div>
-        <hr className="pb-3" />
-        <Link to={`/properti_details/${dta.id}`}>
-          <button className="w-full py-2 px-3 rounded-md text-base font-bold border-redLi border-2 text-redLi hover:bg-redLi hover:text-white active:scale-95 duration-150">
-            View Property
+        <Link to={'/'}>
+          <button className="w-full px-2 py-2 border-2 border-firstColor bg-transparent hover:bg-firstColor text-firstColor hover:text-white font-bold rounded-md duration-150 active:scale-95">
+            View Details
           </button>
         </Link>
       </div>
@@ -68,5 +65,5 @@ const ItemSingleCard = ({ dta }) => {
 
 export default ItemSingleCard;
 ItemSingleCard.propTypes = {
-  dta: PropTypes.object,
+  data: PropTypes.object,
 };

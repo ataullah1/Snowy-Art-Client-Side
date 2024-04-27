@@ -1,17 +1,10 @@
-// import { useLoaderData } from 'react-router-dom';
-// import { useState } from 'react';
-// import { MdArrowRightAlt } from 'react-icons/md';
-// import ItemSingleCard from './ItemSingleCard';
-import { Link } from 'react-router-dom';
-import card1 from '../../assets/card/img1.jpg';
-import { BiHeart } from 'react-icons/bi';
-import { FaStar } from 'react-icons/fa';
-import { FaRegStarHalfStroke } from 'react-icons/fa6';
-const CraftItemsSection = () => {
-  //   const [showDta, setShowDta] = useState(6);
-  //   const data = useLoaderData();
-
-  // console.log(data.length);
+import { useState } from 'react';
+import { MdArrowRightAlt } from 'react-icons/md';
+import ItemSingleCard from './ItemSingleCard';
+import { PropTypes } from 'prop-types';
+const CraftItemsSection = ({ dta }) => {
+  const [showDta, setShowDta] = useState(6);
+  // console.log(dta);
   return (
     <div className="pb-14">
       <div>
@@ -25,7 +18,7 @@ const CraftItemsSection = () => {
         </p>
       </div>
 
-      <div className="mt-14 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+      {/* <div className="mt-14 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
         <div className="rounded-lg border-2 border-firstColor w-full min-h-72 p-2 hover:shadow-lg duration-150">
           <div className="rounded-md h-56 w-full overflow-hidden relative">
             <div
@@ -78,19 +71,19 @@ const CraftItemsSection = () => {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      {/* <div>
+      <div>
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-          {data.slice(0, showDta).map((dta) => (
-            <ItemSingleCard key={dta.id} dta={dta} />
+          {dta.slice(0, showDta).map((data) => (
+            <ItemSingleCard key={data._id} data={data} />
           ))}
         </div>
-        {showDta !== data.length && (
+        {showDta !== dta.length && (
           <p
             data-aos="fade-down"
             className="py-2 px-4 text-center cursor-pointer mt-8 underline flex items-center gap-2 justify-center hover:text-redLi text-lg"
-            onClick={() => setShowDta(data.length)}
+            onClick={() => setShowDta(dta.length)}
           >
             View More Items
             <span className="text-2xl">
@@ -98,9 +91,12 @@ const CraftItemsSection = () => {
             </span>
           </p>
         )}
-      </div> */}
+      </div>
     </div>
   );
 };
 
 export default CraftItemsSection;
+CraftItemsSection.propTypes = {
+  dta: PropTypes.array,
+};

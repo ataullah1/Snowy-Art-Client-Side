@@ -287,12 +287,11 @@ const Nav = () => {
               <div className="modal-box">
                 <form method="dialog">
                   {/* if there is a button in form, it will close the modal */}
-                  <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-xl">
+                  <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-xl bg-slate-500 text-white">
                     <CgClose />
                   </button>
                 </form>
                 <div className="flex gap-4 justify-center items-center min-h-72">
-                  <form method="dialog"></form>
                   <Link to={'/login'}>
                     <button className="text-lg font-bold py-2 border-2 bg-transparent border-firstColor hover:bg-firstColor px-3 rounded-md w-40 text-firstColor hover:text-white">
                       Log In

@@ -2,29 +2,31 @@ import Swal from 'sweetalert2';
 import banner from '../../assets/banner/img9.jpg';
 
 const AddCraftItems = () => {
-  const handleAddCoffee = (e) => {
+  const handleArtCraftItem = (e) => {
     e.preventDefault();
     const dta = e.target;
-    const name = dta.name.value;
-    const chef = dta.chef.value;
-    const supplier = dta.supplier.value;
-    const taste = dta.taste.value;
+    const itemName = dta.itemName.value;
     const category = dta.category.value;
-    const details = dta.details.value;
-    const photo = dta.photo.value;
+    const processing_time = dta.processing_time.value;
+    const customization = dta.customization.value;
+    const stockStatus = dta.stockStatus.value;
+    const rating = dta.rating.value;
     const price = dta.price.value;
+    const photo = dta.photo.value;
+    const description = dta.description.value;
     const formData = {
-      name,
-      chef,
-      supplier,
-      taste,
+      itemName,
       category,
-      photo,
+      processing_time,
+      customization,
+      stockStatus,
+      rating,
       price,
-      details,
+      photo,
+      description,
     };
     // console.log(formData);
-    fetch('https://coffee-store-serve-side.vercel.app/coffees', {
+    fetch('http://localhost:3000/add-art-craft-items', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -38,9 +40,9 @@ const AddCraftItems = () => {
           Swal.fire({
             // position: 'top-end',
             icon: 'success',
-            title: 'Your Coffee has been successfully Added',
-            showConfirmButton: false,
-            timer: 1200,
+            title: 'Your item has been successfully Added',
+            showConfirmButton: true,
+            timer: 1500,
           });
         }
       });
@@ -80,7 +82,7 @@ const AddCraftItems = () => {
         </p>
         <hr className=" mt-3 mb-6" />
         <div>
-          <form className="flex flex-col gap-5" onSubmit={handleAddCoffee}>
+          <form className="flex flex-col gap-5" onSubmit={handleArtCraftItem}>
             <div className="flex flex-col md:flex-row gap-5">
               <div className="flex flex-col gap-2 w-full md:w-1/2">
                 <label className=" text-opacity-80 text-lg font-semibold">
@@ -90,7 +92,7 @@ const AddCraftItems = () => {
                   required
                   className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border"
                   type="text"
-                  name="name"
+                  name="itemName"
                   placeholder="Enter item name"
                 />
               </div>
@@ -126,7 +128,7 @@ const AddCraftItems = () => {
                 <input
                   required
                   className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border"
-                  type="time"
+                  type="text"
                   name="processing_time"
                   placeholder="Enter processing time"
                 />
@@ -153,7 +155,7 @@ const AddCraftItems = () => {
                   <select
                     required
                     className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border"
-                    name="customization"
+                    name="stockStatus"
                   >
                     <option defaultChecked>Select a option</option>
                     <option value="In stock">In stock</option>
@@ -196,7 +198,7 @@ const AddCraftItems = () => {
                 <input
                   required
                   className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border"
-                  type="text"
+                  type="url"
                   name="photo"
                   placeholder="Enter item photo URL"
                 />
@@ -213,7 +215,6 @@ const AddCraftItems = () => {
                 ></textarea>
               </div>
             </div>
-
             <button className="w-full py-1 bg-firstColor rounded-md border-2 border-firstColor text-white font-bold sm:text-lg mb-5 md:mb-0 active:-skew-x-[30deg] hover:bg-transparent hover:text-firstColor duration-200">
               Add Item
             </button>
