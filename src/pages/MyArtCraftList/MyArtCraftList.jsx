@@ -39,9 +39,9 @@ const MyArtCraftList = () => {
         </div>
       </div>
       {/* End Banner top */}
-      <div className="w-11/12 mx-auto">
+      <div className="w-11/12 mx-auto mt-8">
         {filterMyDta ? (
-          <div className="">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-3">
             {filterMyDta.map((dta) => (
               <MyArtCraftSingleCard key={dta._id} dta={dta} />
             ))}

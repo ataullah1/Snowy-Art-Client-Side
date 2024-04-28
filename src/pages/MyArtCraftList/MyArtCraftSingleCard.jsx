@@ -4,9 +4,11 @@ import { FaRegStarHalfStroke } from 'react-icons/fa6';
 import { BiShareAlt } from 'react-icons/bi';
 import { checkPropTypes } from 'prop-types';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const MyArtCraftSingleCard = ({ dta }) => {
   const {
+    _id,
     photo,
     price,
     category,
@@ -17,27 +19,19 @@ const MyArtCraftSingleCard = ({ dta }) => {
     customization,
     processing_time,
   } = dta;
-  // buy add card alart
-  const handleBuy = () => {
-    Swal.fire({
-      // position: 'top-end',
-      icon: 'success',
-      title: 'You have successfully purchased this item.',
-      showConfirmButton: true,
-      timer: 2500,
-    });
-  };
+
+  //  Delete Item Function Call
   const handleAddToCard = () => {
     Swal.fire({
       // position: 'top-end',
       icon: 'success',
-      title: 'You have successfully added this item to the card.',
+      title: 'You have successfully Deleted this card.',
       showConfirmButton: true,
       timer: 2500,
     });
   };
   return (
-    <div className="rounded-lg border-2 border-firstColor max-w-[700px] lg:max-w-full mx-auto hover:shadow-lg flex flex-col lg:flex-row gap-3 lg:gap-5 items-center">
+    <div className="rounded-lg border-2 border-firstColor max-w-[700px] lg:max-w-full w-full mx-auto hover:shadow-lg flex flex-col lg:flex-row gap-3 lg:gap-5 items-center">
       {/* Banner Image */}
       <div className="rounded-t-md lg:rounded-t-none lg:rounded-l-md h-[370px] w-full lg:w-2/5 overflow-hidden relative border-r">
         <div
@@ -58,7 +52,7 @@ const MyArtCraftSingleCard = ({ dta }) => {
         </button>
       </div>
       {/* Content */}
-      <div className="w-full lg:w-3/5 p-4 lg:p-0">
+      <div className="w-full lg:w-3/5 p-4 lg:p-0 flex flex-col flex-grow">
         <h1 className="text-2xl sm:text-3xl font-bold">{itemName}</h1>{' '}
         <div className="flex justify-between">
           <div className="text-xl flex gap-2 items-center">
@@ -129,12 +123,11 @@ const MyArtCraftSingleCard = ({ dta }) => {
           <span className="px-2">You</span>
         </h3>
         <div className="flex gap-5 items-center pt-3 pb-2">
-          <button
-            className="w-40 py-2 font-semibold text-white hover:-translate-y-1 duration-200 bg-secondColor hover:bg-[#2d8e8b]"
-            onClick={handleBuy}
-          >
-            Update
-          </button>
+          <Link to={`/item-updating/${_id}`}>
+            <button className="w-40 py-2 font-semibold text-white hover:-translate-y-1 duration-200 bg-secondColor hover:bg-[#2d8e8b]">
+              Update
+            </button>
+          </Link>
           <button
             className="w-40 py-2 font-semibold text-white hover:-translate-y-1 duration-200 bg-red-500 hover:bg-[#bf2f2f]"
             onClick={handleAddToCard}
