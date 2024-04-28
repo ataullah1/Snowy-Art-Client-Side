@@ -50,6 +50,7 @@ const router = createBrowserRouter([
             <MyArtCraftList />
           </PrivetRoute>
         ),
+        loader: () => fetch('http://localhost:3000/all-art-craft-items'),
       },
       {
         path: '/login',

@@ -74,11 +74,11 @@ const ArtAndCraftDetails = () => {
       </div>
       {/* End Banner top */}
       <div className="w-11/12 mx-auto mt-10">
-        <div className="rounded-lg border-2 border-firstColor max-w-[700px] lg:max-w-full mx-auto hover:shadow-lg flex flex-col lg:flex-row gap-3 lg:gap-5">
+        <div className="rounded-lg border-2 border-firstColor max-w-[700px] lg:max-w-full mx-auto hover:shadow-lg flex flex-col lg:flex-row gap-3 lg:gap-5 items-center">
           {/* Banner Image */}
-          <div className="rounded-l-md h-80 sm:h-96 md:h-[500px] w-full lg:w-2/5 overflow-hidden relative border-r">
+          <div className="rounded-t-md lg:rounded-t-none lg:rounded-l-md h-80 sm:h-96 md:min-h-[520px] w-full lg:w-2/5 overflow-hidden relative border-r">
             <div
-              className="h-full bg-cover bg-no-repeat p-12 text-center rounded-l-md relative duration-[2s]"
+              className="h-full bg-cover bg-no-repeat p-12 text-center rounded-t-md lg:rounded-t-none lg:rounded-l-md relative duration-[2s]"
               style={{
                 backgroundImage: `url(${photo})`,
                 backgroundPosition: 'center',
@@ -87,7 +87,7 @@ const ArtAndCraftDetails = () => {
               }}
             >
               {/* <div
-                className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed rounded-l-md"
+                className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed rounded-t-md lg:rounded-t-none lg:rounded-l-md"
                 style={{ backgroundColor: ' rgba(0, 0, 0, 0.4)' }}
               ></div> */}
             </div>
@@ -171,7 +171,7 @@ const ArtAndCraftDetails = () => {
                 {filterDta?.userName || 'Username not added'}
               </span>
             </h3>
-            <div className="flex gap-5 items-center pt-2">
+            <div className="flex gap-5 items-center pt-5 pb-3">
               <button
                 className="w-40 py-2 font-semibold text-white hover:-translate-y-1 duration-200 bg-firstColor hover:bg-[#d78130]"
                 onClick={handleBuy}
