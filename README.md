@@ -5,7 +5,7 @@
 You can access the live side version of SnowyArt [here](https://snowy-art.web.app/). <br>
 You can access the Server side version of SnowyArt [here](https://github.com/programming-hero-web-course-4/b9a10-server-side-ataullah1).
 
-### - **Category's name:** B9 A10 Type-02 Requirements
+- ### **Category's name:** B9 A10 Type-02 Requirements
 
 ## Description
 
