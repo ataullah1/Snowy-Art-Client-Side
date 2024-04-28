@@ -1,5 +1,6 @@
 import { Link, useLoaderData } from 'react-router-dom';
 import img1 from '../../assets/banner/img10.jpg';
+import noFile from '../../assets/error/noDta.jpg';
 import { useContext, useState } from 'react';
 import { ContextAuth } from '../../provider/Provider';
 import MyArtCraftSingleCard from './MyArtCraftSingleCard';
@@ -9,7 +10,7 @@ const MyArtCraftList = () => {
   const { userDta } = useContext(ContextAuth);
   const data = useLoaderData();
   const filterDta = data.filter((dta) => dta.email === userDta.email);
-  const [filterMyDta, setFilterMyDta] = useState(filterDta);
+  const [filterMyDta, setFilterMyDta] = useState(filterDta); //filterDta
   // console.log(filterDta);
 
   //  Delete Item Function Call
@@ -80,7 +81,7 @@ const MyArtCraftList = () => {
       {/* End Banner top */}
       <div className="w-11/12 mx-auto mt-8">
         {filterMyDta ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-3">
+          <div className="mb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-5">
             {filterMyDta.map((dta) => (
               <MyArtCraftSingleCard
                 key={dta._id}
@@ -90,8 +91,8 @@ const MyArtCraftList = () => {
             ))}
           </div>
         ) : (
-          <div>
-            <h1>Jao sona age data add kore aso</h1>
+          <div className="">
+            <img className="max-h-[450px] mx-auto" src={noFile} alt="" />
           </div>
         )}
       </div>

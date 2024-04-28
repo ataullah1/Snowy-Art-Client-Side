@@ -21,7 +21,7 @@ const MyArtCraftSingleCard = ({ dta, handleDeleteCard }) => {
   } = dta;
 
   return (
-    <div className="rounded-lg border-2 border-firstColor max-w-[700px] lg:max-w-full w-full mx-auto hover:shadow-lg flex flex-col lg:flex-row gap-3 lg:gap-5 items-center">
+    <div className="rounded-lg border-2 border-firstColor max-w-[700px] lg:max-w-full w-full mx-auto hover:shadow-md flex flex-col lg:flex-row gap-3 lg:gap-5 items-center">
       {/* Banner Image */}
       <div className="rounded-t-md lg:rounded-t-none lg:rounded-l-md h-[370px] w-full lg:w-2/5 overflow-hidden relative border-r">
         <div
