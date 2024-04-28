@@ -9,6 +9,7 @@ import MyArtCraftList from '../pages/MyArtCraftList/MyArtCraftList';
 import ErrorNotFound from '../pages/ErrorNotFound/ErrorNotFound';
 import ArtAndCraftDetails from '../pages/ViewDetailsPage/ArtAndCraftDetails';
 import PrivetRoute from './PrivetRoute';
+import ItemUpdate from '../pages/ItemUpdate/ItemUpdate';
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,15 @@ const router = createBrowserRouter([
         element: (
           <PrivetRoute>
             <MyArtCraftList />
+          </PrivetRoute>
+        ),
+        loader: () => fetch('http://localhost:3000/all-art-craft-items'),
+      },
+      {
+        path: '/item-updating/:id',
+        element: (
+          <PrivetRoute>
+            <ItemUpdate />
           </PrivetRoute>
         ),
         loader: () => fetch('http://localhost:3000/all-art-craft-items'),

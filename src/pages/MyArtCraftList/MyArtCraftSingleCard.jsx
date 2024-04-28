@@ -2,11 +2,10 @@ import { AiOutlineFullscreen } from 'react-icons/ai';
 import { FaStar } from 'react-icons/fa';
 import { FaRegStarHalfStroke } from 'react-icons/fa6';
 import { BiShareAlt } from 'react-icons/bi';
-import { checkPropTypes } from 'prop-types';
-import Swal from 'sweetalert2';
+import { PropTypes, func } from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const MyArtCraftSingleCard = ({ dta }) => {
+const MyArtCraftSingleCard = ({ dta, handleDeleteCard }) => {
   const {
     _id,
     photo,
@@ -18,18 +17,9 @@ const MyArtCraftSingleCard = ({ dta }) => {
     stockStatus,
     customization,
     processing_time,
+    userName,
   } = dta;
 
-  //  Delete Item Function Call
-  const handleAddToCard = () => {
-    Swal.fire({
-      // position: 'top-end',
-      icon: 'success',
-      title: 'You have successfully Deleted this card.',
-      showConfirmButton: true,
-      timer: 2500,
-    });
-  };
   return (
     <div className="rounded-lg border-2 border-firstColor max-w-[700px] lg:max-w-full w-full mx-auto hover:shadow-lg flex flex-col lg:flex-row gap-3 lg:gap-5 items-center">
       {/* Banner Image */}
@@ -120,7 +110,7 @@ const MyArtCraftSingleCard = ({ dta }) => {
         </div>
         <h3 className="text-lg text-left font-semibold pt-1">
           <span>Published by: </span>
-          <span className="px-2">You</span>
+          <span className="px-2">{userName}</span>
         </h3>
         <div className="flex gap-5 items-center pt-3 pb-2">
           <Link to={`/item-updating/${_id}`}>
@@ -130,7 +120,7 @@ const MyArtCraftSingleCard = ({ dta }) => {
           </Link>
           <button
             className="w-40 py-2 font-semibold text-white hover:-translate-y-1 duration-200 bg-red-500 hover:bg-[#bf2f2f]"
-            onClick={handleAddToCard}
+            onClick={() => handleDeleteCard(_id)}
           >
             Delete
           </button>
@@ -142,5 +132,6 @@ const MyArtCraftSingleCard = ({ dta }) => {
 
 export default MyArtCraftSingleCard;
 MyArtCraftSingleCard.propTypes = {
-  dta: checkPropTypes.object,
+  dta: PropTypes.object,
+  handleDeleteCard: func,
 };

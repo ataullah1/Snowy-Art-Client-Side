@@ -80,7 +80,7 @@ const AddCraftItems = () => {
 
       {/* Main From */}
       <div className="rounded-lg py-5 px-6 md:px-8 lg:px-16 my-8 border-2 border-firstColor w-11/12 mx-auto shadow-xl">
-        <h1 className="text-5xl font-bold text-center">
+        <h1 className="text-3xl md:text-5xl font-bold text-center">
           Add Art & Craft Items
         </h1>
         <p className="max-w-[932px] text-center text-opacity-70 sm:text-lg mx-auto pt-2 font-light">
@@ -180,7 +180,7 @@ const AddCraftItems = () => {
                 <input
                   required
                   className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border"
-                  type="text"
+                  type="number"
                   name="rating"
                   placeholder="Enter item rating"
                 />
