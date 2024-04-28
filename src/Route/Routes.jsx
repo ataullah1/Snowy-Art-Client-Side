@@ -11,6 +11,7 @@ import ArtAndCraftDetails from '../pages/ViewDetailsPage/ArtAndCraftDetails';
 import PrivetRoute from './PrivetRoute';
 import ItemUpdate from '../pages/ItemUpdate/ItemUpdate';
 import ArtCraftCategoriesCard from '../pages/ArtCraftCategoriesCard/ArtCraftCategoriesCard';
+import About from '../pages/About/About';
 
 const router = createBrowserRouter([
   {
@@ -75,6 +76,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register />,
+      },
+      {
+        path: '/about',
+        element: <About />,
       },
     ],
   },

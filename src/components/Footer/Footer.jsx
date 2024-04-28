@@ -18,8 +18,9 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <h1 className="font-bold text-2xl text-white pb-5">About Site</h1>
             <p>
-              We’re reimagining how you buy, sell and rent. It’s now easier to
-              get into a place you love. So let’s do this, together.
+              At SnowyArt, we celebrate creativity and craftsmanship. Explore
+              our curated collection of unique handmade artworks and unleash
+              your artistic spirit today.
             </p>
           </div>
           <div className="">
