@@ -10,7 +10,9 @@ import { BiSearch } from 'react-icons/bi';
 const MyArtCraftList = () => {
   const { userDta } = useContext(ContextAuth);
   const data = useLoaderData();
-  const filterDta = data.filter((dta) => dta.email === userDta.email);
+  const filterDta = data.filter(
+    (dta) => dta.email === userDta.email && dta.userName === userDta.displayName
+  );
   const [filterMyDta, setFilterMyDta] = useState(filterDta); //filterDta
 
   const handleSorting = (e) => {
