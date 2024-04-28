@@ -56,9 +56,14 @@ const ItemSingleCard = ({ data, imageFullScreen }) => {
         <h1 className="text-2xl font-bold  pb-3">{itemName}</h1>
         <p className="pb-3 sm:min-h-20">
           {description.slice(0, 80)}
-          <Link to={`/item-details/${_id}`} className="text-secondColor">
-            ... See more
-          </Link>
+          {description.length > 80 && (
+            <Link
+              to={`/item-details/${_id}`}
+              className="text-secondColor hover:text-firstColor"
+            >
+              ... See more
+            </Link>
+          )}
         </p>
         <div className="flex gap-4 items-center pb-4 justify-between">
           <div className="text-xl flex gap-2 items-center">

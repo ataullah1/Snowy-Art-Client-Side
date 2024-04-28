@@ -3,8 +3,9 @@ import { MdArrowRightAlt } from 'react-icons/md';
 import ItemSingleCard from './ItemSingleCard';
 import { PropTypes } from 'prop-types';
 import { CgClose } from 'react-icons/cg';
+import { Link } from 'react-router-dom';
 const CraftItemsSection = ({ dta }) => {
-  const [showDta, setShowDta] = useState(6);
+  // const [showDta, setShowDta] = useState(6);
   // console.log(dta);
   const [imgFullScreen, setImgFullScreen] = useState();
   const imageFullScreen = (img) => {
@@ -47,7 +48,7 @@ const CraftItemsSection = ({ dta }) => {
       </div>
       <div>
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-          {dta.slice(0, showDta).map((data) => (
+          {dta.slice(0, 6).map((data) => (
             <ItemSingleCard
               key={data._id}
               data={data}
@@ -55,17 +56,19 @@ const CraftItemsSection = ({ dta }) => {
             />
           ))}
         </div>
-        {showDta < dta.length && (
-          <p
-            data-aos="fade-down"
-            className="py-2 px-4 text-center cursor-pointer mt-8 underline flex items-center gap-2 justify-center hover:text-redLi text-lg"
-            onClick={() => setShowDta(dta.length)}
-          >
-            View More Items
-            <span className="text-2xl">
-              <MdArrowRightAlt />
-            </span>
-          </p>
+        {6 < dta.length && (
+          <Link to={'/all-art-craft-items'}>
+            <p
+              // data-aos="fade-down"
+              className="py-2 px-4 text-center cursor-pointer mt-8 underline flex items-center gap-2 justify-center hover:text-redLi text-lg text-secondColor hover:translate-x-2 duration-150"
+              // onClick={() => setShowDta(dta.length)}
+            >
+              View More Items
+              <span className="text-2xl">
+                <MdArrowRightAlt />
+              </span>
+            </p>
+          </Link>
         )}
       </div>
     </div>

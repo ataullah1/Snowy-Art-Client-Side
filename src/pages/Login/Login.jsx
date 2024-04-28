@@ -21,8 +21,15 @@ const Login = () => {
   const [emailErr, setEmailErr] = useState(null);
   const [passErr, setPassErr] = useState(null);
 
-  const { googleLogin, emlPassLogin, isLoading, userDta, setIsLoading } =
-    useContext(ContextAuth);
+  const {
+    twitterLogin,
+    gitHubLogin,
+    googleLogin,
+    emlPassLogin,
+    isLoading,
+    userDta,
+    setIsLoading,
+  } = useContext(ContextAuth);
 
   console.log(userDta);
   useEffect(() => {
@@ -61,20 +68,6 @@ const Login = () => {
       emlPassLogin(email, pass)
         .then((res) => {
           console.log(res.user);
-          const lastSignInDate = res.user.metadata?.lastSignInTime;
-          const resEmail = res.user.email || email;
-          const data = { lastSignInDate, resEmail };
-          fetch('https://coffee-store-serve-side.vercel.app/users', {
-            method: 'PATCH',
-            headers: {
-              'content-type': 'application/json',
-            },
-            body: JSON.stringify(data),
-          })
-            .then((res) => res.json())
-            .then((dta) => {
-              console.log(dta);
-            });
           Swal.fire({
             title: 'Good job!',
             text: 'Your account has been successfully logged in.',
@@ -112,21 +105,6 @@ const Login = () => {
       .then((res) => {
         const user = res.user;
         console.log(user);
-        const lastSignInDate =
-          res.user.metadata?.lastSignInTime || 'Login time not access';
-        const resEmail = res.user.email;
-        const data = { lastSignInDate, resEmail };
-        fetch('https://coffee-store-serve-side.vercel.app/users', {
-          method: 'PATCH',
-          headers: {
-            'content-type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        })
-          .then((res) => res.json())
-          .then((dta) => {
-            console.log(dta);
-          });
         Swal.fire({
           title: 'Good job!',
           text: 'Your account has been successfully logged in.',
@@ -266,7 +244,7 @@ const Login = () => {
             Login With Google
           </button>
           <button
-            // onClick={() => socialLogin(gitHubLogin)}
+            onClick={() => socialLogin(gitHubLogin)}
             className="py-2 px-4 w-full font-medium border hover:shadow-lg shadow-blue-500/20 rounded-md  flex items-center justify-center gap-2 border-redLi"
           >
             <span className="text-black text-2xl">
@@ -275,7 +253,7 @@ const Login = () => {
             Login With GitHub
           </button>
           <button
-            // onClick={() => socialLogin(twitterLogin)}
+            onClick={() => socialLogin(twitterLogin)}
             className="py-2 px-4 w-full font-medium border hover:shadow-lg shadow-blue-400-900/20 rounded-md  flex items-center justify-center gap-2 border-redLi"
           >
             <span className="text-blue-400 text-2xl">
