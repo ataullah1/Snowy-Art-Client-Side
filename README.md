@@ -2,8 +2,10 @@
 
 ## Live Link: https://snowy-art.web.app/
 
-You can access the live side version of SnowyArt [here](https://snowy-art.web.app/).
+You can access the live side version of SnowyArt [here](https://snowy-art.web.app/). <br>
 You can access the Server side version of SnowyArt [here](https://github.com/programming-hero-web-course-4/b9a10-server-side-ataullah1).
+
+### - **Category's name:** B9 A10 Type-02 Requirements
 
 ## Description
 
@@ -57,6 +59,7 @@ SnowyArt is an online platform dedicated to showcasing and selling various art p
 
 - **React Tooltip**
 - **React-Simple-Typewriter**
+- **Axios**
 - **AOS Package**
 - **Swiper**
 - **React Hook Form**
@@ -120,8 +123,6 @@ To install and run SnowyArt locally, follow these steps:
 ## Feedback and Contributions
 
 Feedback and contributions are welcome! If you encounter any issues or have suggestions for improvement, please [open an issue](https://github.com/programming-hero-web-course-4/b9a9-real-estate-ataullah1/issues) or submit a pull request.
-
-Thank you for using SnowyArt! We hope you find your dream Property.
 
 ## Contact me
 
