@@ -1,6 +1,6 @@
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import img1 from '../../assets/banner/img2.jpg';
-import ItemSingleCard from '../../components/CraftItemsSection/ItemSingleCard';
+// import ItemSingleCard from '../../components/CraftItemsSection/ItemSingleCard';
 import { useState } from 'react';
 import { CgClose } from 'react-icons/cg';
 const AllArtCraftItems = () => {
@@ -56,12 +56,7 @@ const AllArtCraftItems = () => {
         </div>
       </div>
       <div className="w-11/12 mx-auto">
-        {/* <div className="flex flex-col items-center justify-center">
-          <h1 className="text-3xl md:text-5xl font-bold my-5 md:my-10 border-b-4 border-secondColor inline-block px-3">
-            All Art And Craft Items
-          </h1>
-        </div> */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        {/* <div className="mt-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {data.map((dta) => (
             <ItemSingleCard
               key={dta._id}
@@ -69,6 +64,76 @@ const AllArtCraftItems = () => {
               imageFullScreen={imageFullScreen}
             />
           ))}
+        </div> */}
+        <div className="mt-10 overflow-x-auto">
+          <table className="min-w-[930px] w-full border">
+            <thead>
+              <tr className="border text-xl">
+                <th className="border-r px-2 py-5 bg-secondColor text-white">
+                  No
+                </th>
+                <th className="border-r px-2 py-5 bg-secondColor text-white w-40 min-w-40">
+                  Photo
+                </th>
+                <th className="border-r px-2 py-5 bg-secondColor text-white min-w-52">
+                  Item Name
+                </th>
+                <th className="border-r px-2 py-5 bg-secondColor text-white min-w-44">
+                  Categories Name
+                </th>
+                <th className="border-r px-2 py-5 bg-secondColor text-white">
+                  Price
+                </th>
+                <th className="border-r px-2 py-5 bg-secondColor text-white">
+                  Ratings
+                </th>
+                <th className="border-r px-2 py-5 bg-secondColor text-white">
+                  Stock Status
+                </th>
+                <th className="bg-secondColor text-white w-24">Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.map((dta, i) => (
+                <tr key={dta._id} className="text-xl border-b">
+                  <td
+                    className="border-r text-center font-bold bannerFont"
+                    id="noTable"
+                  >
+                    {i + 1}
+                  </td>
+                  <td className="border-r h-36 flex flex-col items-center justify-center">
+                    <div
+                      className="h-32 w-full cursor-pointer"
+                      style={{
+                        backgroundImage: `url(${dta.photo})`,
+                        backgroundPosition: 'center',
+                        backgroundSize: 'cover',
+                        backgroundRepeat: 'no-repeat',
+                      }}
+                    ></div>
+                  </td>
+                  <td className="border-r px-2">{dta.itemName}</td>
+                  <td className="border-r px-2">{dta.category}</td>
+                  <td className="border-r px-2 text-center heightFont">
+                    ${dta.price}
+                  </td>
+                  <td className="border-r px-2 text-center">{dta.rating}</td>
+                  <td className="border-r px-2 text-center">
+                    {dta.stockStatus}
+                  </td>
+                  <td className="text-center cursor-pointer font-bold hover:text-firstColor duration-100">
+                    <Link
+                      className=" py-14 px-3 duration-100 hover:bg-[#6e686847]"
+                      to={`/item-details/${dta._id}`}
+                    >
+                      Details
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
