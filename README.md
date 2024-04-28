@@ -5,11 +5,18 @@
 You can access the live side version of SnowyArt [here](https://snowy-art.web.app/). <br>
 You can access the Server side version of SnowyArt [here](https://github.com/programming-hero-web-course-4/b9a10-server-side-ataullah1).
 
-- ### **Category's name:** B9 A10 Type-02 Requirements
-
 ## Description
 
 SnowyArt is an online platform dedicated to showcasing and selling various art paintings and craft items. Users can explore a wide range of artworks, add their own creations, and interact with the community.
+
+## **Category's name:** Painting and Drawing
+
+- a. Landscape Painting
+- b. Portrait Drawing
+- c. Watercolour Painting
+- d. Oil Painting
+- e. Charcoal Sketching
+- f. Cartoon Drawing
 
 ## Features and Characteristics of this project:
 
