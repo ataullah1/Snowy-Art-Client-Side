@@ -10,6 +10,7 @@ import ErrorNotFound from '../pages/ErrorNotFound/ErrorNotFound';
 import ArtAndCraftDetails from '../pages/ViewDetailsPage/ArtAndCraftDetails';
 import PrivetRoute from './PrivetRoute';
 import ItemUpdate from '../pages/ItemUpdate/ItemUpdate';
+import ArtCraftCategoriesCard from '../pages/ArtCraftCategoriesCard/ArtCraftCategoriesCard';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,11 @@ const router = createBrowserRouter([
       {
         path: '/all-art-craft-items',
         element: <AllArtCraftItems />,
+        loader: () => fetch('http://localhost:3000/all-art-craft-items'),
+      },
+      {
+        path: '/categorie/:id',
+        element: <ArtCraftCategoriesCard />,
         loader: () => fetch('http://localhost:3000/all-art-craft-items'),
       },
       {
