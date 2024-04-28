@@ -3,6 +3,7 @@ import ArtCraftCategoriesSection from '../../components/ArtCraftCategoriesSectio
 import Banner from '../../components/Banner/Banner';
 import CraftItemsSection from '../../components/CraftItemsSection/CraftItemsSection';
 import { useEffect, useState } from 'react';
+import ArtGelary from '../../components/ArtGelary/ArtGelary';
 
 const Home = () => {
   const dta = useLoaderData();
@@ -26,6 +27,7 @@ const Home = () => {
       <div className="w-11/12 mx-auto">
         <CraftItemsSection dta={dta} />
         <ArtCraftCategoriesSection data={data} />
+        <ArtGelary />
       </div>
     </div>
   );

@@ -15,7 +15,7 @@ const AllArtCraftItems = () => {
     <div className="pb-20">
       {/* Modal open image  */}
       <dialog id="my_modal_3" className="modal">
-        <div className="modal-box h-[500px] w-[500] relative border border-firstColor">
+        <div className="modal-box h-[500px] w-full sm:w-[500] relative border border-firstColor">
           <form method="dialog">
             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-2xl bg-slate-700 text-white hover:text-firstColor hover:bg-white border-2 border-slate-700 hover:border-firstColor">
               <CgClose />
@@ -76,7 +76,7 @@ const AllArtCraftItems = () => {
                   Photo
                 </th>
                 <th className="border-r px-2 py-5 bg-secondColor text-white min-w-52">
-                  Item Name
+                  Art & Craft Item Name
                 </th>
                 <th className="border-r px-2 py-5 bg-secondColor text-white min-w-44">
                   Categories Name
@@ -105,6 +105,7 @@ const AllArtCraftItems = () => {
                   <td className="border-r h-36 flex flex-col items-center justify-center">
                     <div
                       className="h-32 w-full cursor-pointer"
+                      onClick={() => imageFullScreen(dta.photo)}
                       style={{
                         backgroundImage: `url(${dta.photo})`,
                         backgroundPosition: 'center',
