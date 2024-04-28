@@ -18,7 +18,7 @@ const ItemUpdate = () => {
     price,
     photo,
     description,
-    userName,
+    // userName,
   } = filterUpdate;
   const navige = useNavigate();
 
@@ -34,7 +34,7 @@ const ItemUpdate = () => {
     const price = dta.price.value;
     const photo = dta.photo.value;
     const description = dta.description.value;
-    const userName = dta.userName.value;
+    // const userName = dta.userName.value;
     const newData = {
       itemName,
       category,
@@ -45,7 +45,7 @@ const ItemUpdate = () => {
       price,
       photo,
       description,
-      userName,
+      // userName,
     };
     // console.log(formData);
     axios
@@ -205,36 +205,36 @@ const ItemUpdate = () => {
                 </div>
               </div>
             </div>
+            {/* <div className="flex flex-col md:flex-row gap-5"> */}
             <div className="flex flex-col md:flex-row gap-5">
-              <div className="flex flex-col md:flex-row gap-5 md:w-1/2">
-                <div className="flex flex-col gap-2 w-full md:w-1/2">
-                  <label className=" text-opacity-80 text-lg font-semibold">
-                    Price
-                  </label>
-                  <input
-                    required
-                    className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border"
-                    type="text"
-                    defaultValue={price}
-                    name="price"
-                    placeholder="Enter price of item"
-                  />
-                </div>
-                <div className="flex flex-col gap-2 w-full md:w-1/2">
-                  <label className=" text-opacity-80 text-lg font-semibold">
-                    Rating Of Item
-                  </label>
-                  <input
-                    required
-                    className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border"
-                    type="number"
-                    defaultValue={rating}
-                    name="rating"
-                    placeholder="Enter item rating"
-                  />
-                </div>
+              <div className="flex flex-col gap-2 w-full md:w-1/2">
+                <label className=" text-opacity-80 text-lg font-semibold">
+                  Price
+                </label>
+                <input
+                  required
+                  className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border"
+                  type="text"
+                  defaultValue={price}
+                  name="price"
+                  placeholder="Enter price of item"
+                />
               </div>
               <div className="flex flex-col gap-2 w-full md:w-1/2">
+                <label className=" text-opacity-80 text-lg font-semibold">
+                  Rating Of Item
+                </label>
+                <input
+                  required
+                  className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border"
+                  type="number"
+                  defaultValue={rating}
+                  name="rating"
+                  placeholder="Enter item rating"
+                />
+              </div>
+            </div>
+            {/* <div className="flex flex-col gap-2 w-full md:w-1/2">
                 <label className=" text-opacity-80 text-lg font-semibold">
                   Published by
                 </label>
@@ -247,7 +247,7 @@ const ItemUpdate = () => {
                   placeholder="Enter item rating"
                 />
               </div>
-            </div>
+            </div> */}
             <div className="flex flex-col md:flex-row gap-5">
               <div className="flex flex-col gap-2 w-full md:w-1/2">
                 <label className=" text-opacity-80 text-lg font-semibold">
@@ -267,7 +267,7 @@ const ItemUpdate = () => {
                   Short Description
                 </label>
                 <textarea
-                  className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border min-h-10 h-10"
+                  className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border h-20"
                   defaultValue={description}
                   name="description"
                   placeholder="Enter item short description
@@ -275,7 +275,7 @@ const ItemUpdate = () => {
                 ></textarea>
               </div>
             </div>
-            <button className="w-full py-1 bg-firstColor rounded-md border-2 border-firstColor text-white font-bold sm:text-lg mb-5 md:mb-0 active:-skew-x-[30deg] hover:bg-transparent hover:text-firstColor duration-200">
+            <button className="w-full py-1 bg-firstColor rounded-md border-2 border-firstColor text-white font-bold sm:text-lg mb-3 active:-skew-x-[30deg] hover:bg-transparent hover:text-firstColor duration-200">
               Update Item
             </button>
           </form>

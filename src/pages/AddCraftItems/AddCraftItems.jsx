@@ -2,6 +2,7 @@ import Swal from 'sweetalert2';
 import banner from '../../assets/banner/img9.jpg';
 import { useContext } from 'react';
 import { ContextAuth } from '../../provider/Provider';
+import { Link } from 'react-router-dom';
 
 const AddCraftItems = () => {
   const { userDta } = useContext(ContextAuth);
@@ -58,25 +59,34 @@ const AddCraftItems = () => {
   };
   return (
     <div>
-      {/* Banner image  */}
-      <div className="h-52 md:h-72 bg-fuchsia-100">
-        <div className=" h-full w-full overflow-hidden">
+      {/* Top Banner Img */}
+      <div className="h-48 md:h-64 bg-fuchsia-100">
+        <div className="h-full w-full overflow-hidden">
           <div
-            className="h-full bg-cover bg-no-repeat p-12 text-center  relative hover:scale-110 hover:-rotate-1 duration-[2s] "
+            className="h-full bg-cover bg-no-repeat p-12 text-center relative hover:scale-110 hover:-rotate-1 duration-[2s] "
             style={{
               backgroundImage: `url(${banner})`,
-              backgroundPosition: 'top  ',
+              backgroundPosition: 'top',
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
             }}
           >
             <div
-              className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed  flex items-center justify-center"
+              className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed flex items-center justify-center"
               style={{ backgroundColor: ' rgba(0, 0, 0, 0.6)' }}
             ></div>
           </div>
+          <div className="absolute z-30 left-1/2 -translate-x-1/2 text-2xl sm:text-3xl text-white font-bold text-center top-28 md:top-36 w-full italic">
+            <Link to={'/'}>
+              <button className="italic">Home /</button>
+            </Link>{' '}
+            <Link to={'/add-craft-item'}>
+              <button className="italic">Add Item</button>
+            </Link>
+          </div>
         </div>
       </div>
+      {/* End Banner top */}
 
       {/* Main From */}
       <div className="rounded-lg py-5 px-6 md:px-8 lg:px-16 my-8 border-2 border-firstColor w-11/12 mx-auto shadow-xl">
@@ -216,7 +226,7 @@ const AddCraftItems = () => {
                   Short Description
                 </label>
                 <textarea
-                  className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border min-h-10 h-10"
+                  className=" placeholder-opacity-60 text-base font-normal py-2 px-4 rounded-md w-full outline-none border h-20"
                   name="description"
                   placeholder="Enter item short description
                   "

@@ -11,7 +11,7 @@ const MyArtCraftList = () => {
   const { userDta } = useContext(ContextAuth);
   const data = useLoaderData();
   const filterDta = data.filter(
-    (dta) => dta.email === userDta.email && dta.userName === userDta.displayName
+    (dta) => dta.email === userDta.email || dta.userName === userDta.displayName
   );
   const [filterMyDta, setFilterMyDta] = useState(filterDta); //filterDta
 
@@ -94,8 +94,8 @@ const MyArtCraftList = () => {
         </div>
       </div>
       {/* End Banner top */}
-      <div className="w-11/12 mx-auto">
-        {filterMyDta ? (
+      <div className="w-11/12 mx-auto mb-8">
+        {filterMyDta.length >= 1 ? (
           <div>
             <div className="my-4 flex justify-between items-center">
               <div className="flex flex-col sm:flex-row items-start sm:items-center sm:gap-2">
