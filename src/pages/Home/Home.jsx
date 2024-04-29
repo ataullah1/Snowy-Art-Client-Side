@@ -5,6 +5,7 @@ import CraftItemsSection from '../../components/CraftItemsSection/CraftItemsSect
 import { useEffect, useState } from 'react';
 import ArtGelary from '../../components/ArtGelary/ArtGelary';
 import BannerUnder from '../../components/BannerUnder/BannerUnder';
+import Contact from '../Contact/Contact';
 
 const Home = () => {
   const dta = useLoaderData();
@@ -30,6 +31,7 @@ const Home = () => {
         <CraftItemsSection dta={dta} />
         <ArtCraftCategoriesSection data={data} />
         <ArtGelary />
+        <Contact />
       </div>
     </div>
   );

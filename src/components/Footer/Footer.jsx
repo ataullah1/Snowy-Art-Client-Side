@@ -16,7 +16,7 @@ const Footer = () => {
       <div className=" bg-[#24324A]">
         <div className="w-11/12 max-w-[1700px] mx-auto grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-2 lg:grid-cols-6 lg:grid-rows-1 gap-8 sm:gap-3 xl:gap-5 py-16">
           <div className="lg:col-span-2">
-            <h1 className="font-bold text-2xl text-white pb-5">About Site</h1>
+            <h1 className="font-bold text-2xl text-white pb-5">Snowy Art</h1>
             <p>
               At SnowyArt, we celebrate creativity and craftsmanship. Explore
               our curated collection of unique handmade artworks and unleash

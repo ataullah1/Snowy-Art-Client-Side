@@ -10,7 +10,7 @@ import img11 from '../../assets/gelary/img12.png';
 
 const ArtGelary = () => {
   return (
-    <div>
+    <div className='pb-16'>
       <div className="mt-6 mb-9">
         <h1 className="text-3xl md:text-5xl text-center pt-5 font-bold pb-2">
           Art Gallery
