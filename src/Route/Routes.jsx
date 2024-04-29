@@ -13,6 +13,7 @@ import ItemUpdate from '../pages/ItemUpdate/ItemUpdate';
 import ArtCraftCategoriesCard from '../pages/ArtCraftCategoriesCard/ArtCraftCategoriesCard';
 import About from '../pages/About/About';
 import ContactPage from '../pages/Contact/ContactPage';
+import Profile from '../pages/Profile/Profile';
 
 const router = createBrowserRouter([
   {
@@ -85,6 +86,10 @@ const router = createBrowserRouter([
       {
         path: '/contact',
         element: <ContactPage />,
+      },
+      {
+        path: '/profile',
+        element: <Profile />,
       },
     ],
   },

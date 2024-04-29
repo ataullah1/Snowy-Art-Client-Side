@@ -17,7 +17,6 @@ const MyArtCraftSingleCard = ({ dta, handleDeleteCard }) => {
     stockStatus,
     customization,
     processing_time,
-    userName,
   } = dta;
 
   return (
@@ -110,7 +109,7 @@ const MyArtCraftSingleCard = ({ dta, handleDeleteCard }) => {
         </div>
         <h3 className="text-lg text-left font-semibold pt-1">
           <span>Published by: </span>
-          <span className="px-2">{userName}</span>
+          <span className="px-2">You</span>
         </h3>
         <div className="flex gap-5 items-center pt-3 pb-2">
           <Link to={`/item-updating/${_id}`}>
