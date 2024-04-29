@@ -34,13 +34,6 @@ const Nav = () => {
   const [viewProfile, setViewProfile] = useState(false);
   const [view, setView] = useState(false);
 
-  // handleClose
-  const handleClose = () => {
-    document.getElementById('my_modal_1').classList.add('hidden');
-    console.log('Hello');
-    document.getElementById('my_modal_1').classList.remove('hidden');
-  };
-
   // console.log(hover);
   return (
     <div className="">
@@ -138,24 +131,28 @@ const Nav = () => {
                       <NavLink
                         to={'/'}
                         className="hover:bg-slate-300 hover:text-firstColor py-1 px-4 rounded"
+                        onClick={() => setView(!view)}
                       >
                         Home
                       </NavLink>
                       <NavLink
                         to={'/all-art-craft-items'}
                         className="hover:bg-slate-300 hover:text-firstColor py-1 px-4 rounded"
+                        onClick={() => setView(!view)}
                       >
                         All Art & craft Items
                       </NavLink>
                       <NavLink
                         to={'/add-craft-item'}
                         className="hover:bg-slate-300 hover:text-firstColor py-1 px-4 rounded"
+                        onClick={() => setView(!view)}
                       >
                         Add Craft Item
                       </NavLink>
                       <NavLink
                         to={'/my-art-craft-list'}
                         className="hover:bg-slate-300 hover:text-firstColor py-1 px-4 rounded"
+                        onClick={() => setView(!view)}
                       >
                         My Art&Craft List
                       </NavLink>
@@ -163,12 +160,14 @@ const Nav = () => {
                         <Link
                           to={'/login'}
                           className="font-semibold hover:bg-firstColor hover:text-white px-5 sm:px-8 py-2 sm:py-3 rounded-md border-2 border-white text-white active:scale-90 duration-150"
+                          onClick={() => setView(!view)}
                         >
                           Login
                         </Link>
                         <Link
                           to={'/register'}
                           className="font-semibold bg-firstColor hover:bg-white hover:text-firstColor text-white px-5 sm:px-8 py-2 sm:py-3 rounded-md active:scale-90 duration-150"
+                          onClick={() => setView(!view)}
                         >
                           Register
                         </Link>
@@ -294,7 +293,10 @@ const Nav = () => {
               </div>
             )}
             {/* Open the modal using document.getElementById('ID').showModal() method */}
-            <dialog id="my_modal_1" className="modal">
+            <dialog
+              id="my_modal_1"
+              className="hidden sm:flex items-center justify-center modal"
+            >
               <div
                 className="modal-box relative w-[700px]"
                 style={{
@@ -312,7 +314,7 @@ const Nav = () => {
                   </button>
                 </form>
                 <div className="flex gap-4 justify-center items-center min-h-72">
-                  <Link to={'/login'} onClick={handleClose}>
+                  <Link to={'/login'}>
                     <button className="text-lg font-bold py-2 border-2 bg-secondColor text-white border-secondColor hover:scale-110 duration-200 px-3 rounded-md w-40  hover:text-white">
                       Log In
                     </button>
