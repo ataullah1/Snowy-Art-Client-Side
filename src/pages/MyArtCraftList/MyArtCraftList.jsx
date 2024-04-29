@@ -21,7 +21,7 @@ const MyArtCraftList = () => {
       return res.json();
     },
   });
-  const filterDta = data.filter(
+  const filterDta = data?.filter(
     (dta) => dta.email === userDta.email || dta.uid === userDta.uid
   );
   const [filterMyDta, setFilterMyDta] = useState(filterDta); //filterDta
@@ -33,7 +33,7 @@ const MyArtCraftList = () => {
       setFilterMyDta(filterDta);
       return;
     }
-    const sortCustomizable = filterDta.filter(
+    const sortCustomizable = filterDta?.filter(
       (dta) => dta.customization === sort
     );
     setFilterMyDta(sortCustomizable);
@@ -60,7 +60,7 @@ const MyArtCraftList = () => {
               text: 'Your item has been successfully deleted.',
               icon: 'success',
             });
-            const deletedDtaRemove = filterDta.filter((dta) => dta._id !== id);
+            const deletedDtaRemove = filterDta?.filter((dta) => dta._id !== id);
             setFilterMyDta(deletedDtaRemove);
           })
           .catch((error) => {
@@ -153,7 +153,7 @@ const MyArtCraftList = () => {
             </div>
           </div>
         </div>
-        {filterMyDta.length >= 1 ? (
+        {filterMyDta?.length >= 1 ? (
           <div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-5">
               {filterMyDta.map((dta) => (

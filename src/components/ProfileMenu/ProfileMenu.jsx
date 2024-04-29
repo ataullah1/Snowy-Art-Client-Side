@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom';
 import { ContextAuth } from '../../provider/Provider';
 import { useContext } from 'react';
 import { BiLogOut } from 'react-icons/bi';
-const ProfileMenu = () => {
+import { PropTypes } from 'prop-types';
+const ProfileMenu = ({ viewProfile, setViewProfile }) => {
   const { userDta, logOut } = useContext(ContextAuth);
   return (
     <div className="h-full">
@@ -17,7 +18,7 @@ const ProfileMenu = () => {
             {userDta ? userDta.displayName : 'user.displayName'}
           </h2>
           <div className="w-full text-center">
-            <Link to={'profile'}>
+            <Link to={'profile'} onClick={() => setViewProfile(!viewProfile)}>
               <button className="border-2 border-orange-400 relative inline-flex items-center justify-start px-6 py-1.5 overflow-hidden font-medium transition-all bg-white rounded hover:bg-white group">
                 <span className="w-48 h-48 rounded rotate-[-40deg] bg-secondColor absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
                 <span className="relative w-full text-left text-slate-800 transition-colors duration-300 ease-in-out group-hover:text-white">
@@ -32,6 +33,7 @@ const ProfileMenu = () => {
             <Link
               className="py-1.5 border rounded-md w-full px-3 hover:border-orange-400 duration-150"
               to={'/'}
+              onClick={() => setViewProfile(!viewProfile)}
             >
               Home
             </Link>
@@ -77,3 +79,7 @@ const ProfileMenu = () => {
 };
 
 export default ProfileMenu;
+ProfileMenu.propTypes = {
+  viewProfile: PropTypes.boolean,
+  setViewProfile: PropTypes.func,
+};

@@ -272,7 +272,10 @@ const Nav = () => {
                     >
                       <IoMdClose />
                     </div>
-                    <ProfileMenu />
+                    <ProfileMenu
+                      viewProfile={viewProfile}
+                      setViewProfile={setViewProfile}
+                    />
                   </div>
                 </div>
               </div>
