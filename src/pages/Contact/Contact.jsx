@@ -8,7 +8,7 @@ import { SiGmail } from 'react-icons/si';
 import ContactForm from '../../components/ContactFrom/ContactFrom';
 const Contact = () => {
   return (
-    <div className='mb-10'>
+    <div className="mb-10">
       <div className="mt-10 flex flex-col-reverse md:flex-row-reverse gap-4 md:gap-8 lg:gap-28 justify-between">
         <div className="w-full md:w-3/5">
           <h1
