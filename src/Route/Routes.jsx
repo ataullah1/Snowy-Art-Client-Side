@@ -24,20 +24,14 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
-        loader: () =>
-          fetch('https://snowy-art-server-side.vercel.app/all-art-craft-items'),
       },
       {
         path: '/all-art-craft-items',
         element: <AllArtCraftItems />,
-        loader: () =>
-          fetch('https://snowy-art-server-side.vercel.app/all-art-craft-items'),
       },
       {
         path: '/categorie/:id',
         element: <ArtCraftCategoriesCard />,
-        loader: () =>
-          fetch('https://snowy-art-server-side.vercel.app/all-art-craft-items'),
       },
       {
         path: '/item-details/:id',
@@ -46,8 +40,6 @@ const router = createBrowserRouter([
             <ArtAndCraftDetails />
           </PrivetRoute>
         ),
-        loader: () =>
-          fetch('https://snowy-art-server-side.vercel.app/all-art-craft-items'),
       },
       {
         path: '/add-craft-item',
@@ -64,8 +56,6 @@ const router = createBrowserRouter([
             <MyArtCraftList />
           </PrivetRoute>
         ),
-        loader: () =>
-          fetch('https://snowy-art-server-side.vercel.app/all-art-craft-items'),
       },
       {
         path: '/item-updating/:id',
@@ -74,8 +64,6 @@ const router = createBrowserRouter([
             <ItemUpdate />
           </PrivetRoute>
         ),
-        loader: () =>
-          fetch('https://snowy-art-server-side.vercel.app/all-art-craft-items'),
       },
       {
         path: '/login',

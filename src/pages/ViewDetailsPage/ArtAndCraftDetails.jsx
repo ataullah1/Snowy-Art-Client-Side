@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import img1 from '../../assets/banner/img4.png';
 import { FaStar } from 'react-icons/fa';
 import { FaRegStarHalfStroke } from 'react-icons/fa6';
@@ -7,10 +7,24 @@ import { BiShareAlt } from 'react-icons/bi';
 import { HiOutlineHeart } from 'react-icons/hi';
 import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet';
+import { useQuery } from 'react-query';
+import Loding from '../Loding/Loding';
 
 const ArtAndCraftDetails = () => {
   const { id } = useParams();
-  const allDta = useLoaderData();
+  const {
+    data: allDta,
+    isLoading,
+    isError,
+  } = useQuery({
+    queryKey: ['all-art-craft-items'],
+    queryFn: async () => {
+      const res = await fetch(
+        'https://snowy-art-server-side.vercel.app/all-art-craft-items'
+      );
+      return res.json();
+    },
+  });
   const filterDta = allDta.find((dta) => dta._id === id);
   //   console.log(filterDta);
   const {
@@ -44,6 +58,18 @@ const ArtAndCraftDetails = () => {
       timer: 2500,
     });
   };
+
+  if (isError) {
+    Swal.fire({
+      title: 'Ooppsss...!',
+      text: 'Sorry, All Art And Craft data could not be loaded.',
+      icon: 'error',
+      timer: 2500,
+    });
+  }
+  if (isLoading) {
+    return <Loding />;
+  }
   return (
     <div>
       <Helmet>

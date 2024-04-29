@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Loding = () => {
   return (
-    <div className="min-h-screen relative flex items-center justify-center">
+    <div className="min-h-screen relative flex items-center justify-center z-[60] ">
       <div className="lds-spinner">
         <div></div>
         <div></div>

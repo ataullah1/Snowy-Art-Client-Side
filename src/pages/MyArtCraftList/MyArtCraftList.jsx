@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import img1 from '../../assets/banner/img10.jpg';
 import noFile from '../../assets/error/noDta.jpg';
 import { useContext, useState } from 'react';
@@ -8,9 +8,19 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { BiSearch } from 'react-icons/bi';
 import { Helmet } from 'react-helmet';
+import { useQuery } from 'react-query';
+import Loding from '../Loding/Loding';
 const MyArtCraftList = () => {
   const { userDta } = useContext(ContextAuth);
-  const data = useLoaderData();
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ['all-art-craft-items'],
+    queryFn: async () => {
+      const res = await fetch(
+        'https://snowy-art-server-side.vercel.app/all-art-craft-items'
+      );
+      return res.json();
+    },
+  });
   const filterDta = data.filter(
     (dta) => dta.email === userDta.email || dta.uid === userDta.uid
   );
@@ -64,7 +74,17 @@ const MyArtCraftList = () => {
       }
     });
   };
-
+  if (isError) {
+    Swal.fire({
+      title: 'Ooppsss...!',
+      text: 'Sorry, All Art And Craft data could not be loaded.',
+      icon: 'error',
+      timer: 2500,
+    });
+  }
+  if (isLoading) {
+    return <Loding />;
+  }
   return (
     <div>
       <Helmet>

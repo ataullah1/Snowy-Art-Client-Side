@@ -1,18 +1,40 @@
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import img1 from '../../assets/banner/img2.jpg';
 // import ItemSingleCard from '../../components/CraftItemsSection/ItemSingleCard';
 import { useState } from 'react';
 import { CgClose } from 'react-icons/cg';
 import { Helmet } from 'react-helmet';
+import { useQuery } from 'react-query';
+import Swal from 'sweetalert2';
+import Loding from '../Loding/Loding';
 const AllArtCraftItems = () => {
-  const data = useLoaderData();
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ['all-art-craft-items'],
+    queryFn: async () => {
+      const res = await fetch(
+        'https://snowy-art-server-side.vercel.app/all-art-craft-items'
+      );
+      return res.json();
+    },
+  });
   const [imgFullScreen, setImgFullScreen] = useState();
   const imageFullScreen = (img) => {
     // console.log(img);
     setImgFullScreen(img);
     document.getElementById('my_modal_3').showModal();
   };
-  
+
+  if (isError) {
+    Swal.fire({
+      title: 'Ooppsss...!',
+      text: 'Sorry, All Art And Craft data could not be loaded.',
+      icon: 'error',
+      timer: 2500,
+    });
+  }
+  if (isLoading) {
+    return <Loding />;
+  }
   return (
     <div className="pb-20">
       <Helmet>
