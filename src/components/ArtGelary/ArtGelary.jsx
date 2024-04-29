@@ -23,87 +23,86 @@ const ArtGelary = () => {
         </p>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-        <div
-          className="h-64  rounded-md col-span-2"
-          style={{
-            backgroundImage: `url(${img1})`,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-          }}
-        ></div>
-        <div
-          className="h-64  rounded-md"
-          style={{
-            backgroundImage: `url(${img8})`,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-          }}
-        ></div>
-        <div
-          className="h-64  rounded-md"
-          style={{
-            backgroundImage: `url(${img3})`,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-          }}
-        ></div>
-        <div
-          className="sm:h-full rounded-md sm:row-span-2 hidden sm:block"
-          style={{
-            backgroundImage: `url(${img9})`,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-          }}
-        ></div>
-        <div
-          className="h-64 rounded-md col-span-2 sm:hidden"
-          style={{
-            backgroundImage: `url(${img11})`,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-          }}
-        ></div>
-        <div
-          className="h-64  rounded-md"
-          style={{
-            backgroundImage: `url(${img4})`,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-          }}
-        ></div>
-        <div
-          className="h-64 rounded-md sm:col-span-2"
-          style={{
-            backgroundImage: `url(${img10})`,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-          }}
-        ></div>
-        <div
-          className="h-64  rounded-md col-span-2"
-          style={{
-            backgroundImage: `url(${img7})`,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-          }}
-        ></div>
-        <div
-          className="sm:h-64 rounded-md col-span-1 sm:block hidden"
-          style={{
-            backgroundImage: `url(${img6})`,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-          }}
-        ></div>
+        <div className="h-64 rounded-md col-span-2 overflow-hidden">
+          <div
+            className="h-full rounded-md w-full bg-cover bg-no-repeat bg-center hover:scale-110 hover:rotate-2 duration-[2s] "
+            style={{
+              backgroundImage: `url(${img1})`,
+            }}
+          ></div>
+        </div>
+
+        <div className="h-64 rounded-md overflow-hidden">
+          <div
+            className="h-full rounded-md w-full bg-cover bg-no-repeat bg-center hover:scale-110 hover:rotate-2 duration-[2s] "
+            style={{
+              backgroundImage: `url(${img8})`,
+            }}
+          ></div>
+        </div>
+
+        <div className="h-64 rounded-md overflow-hidden">
+          <div
+            className="h-full rounded-md w-full bg-cover bg-no-repeat bg-center hover:scale-110 hover:rotate-2 duration-[2s] "
+            style={{
+              backgroundImage: `url(${img3})`,
+            }}
+          ></div>
+        </div>
+
+        <div className="sm:h-full rounded-md sm:row-span-2 hidden sm:block overflow-hidden">
+          <div
+            className="h-full rounded-md w-full bg-cover bg-no-repeat bg-center hover:scale-110 hover:rotate-2 duration-[2s] "
+            style={{
+              backgroundImage: `url(${img9})`,
+            }}
+          ></div>
+        </div>
+
+        <div className="h-64 rounded-md col-span-2 sm:hidden overflow-hidden">
+          <div
+            className="h-full rounded-md w-full bg-cover bg-no-repeat bg-center hover:scale-110 hover:rotate-2 duration-[2s] "
+            style={{
+              backgroundImage: `url(${img11})`,
+            }}
+          ></div>
+        </div>
+
+        <div className="h-64 rounded-md overflow-hidden">
+          <div
+            className="h-full rounded-md w-full bg-cover bg-no-repeat bg-center hover:scale-110 hover:rotate-2 duration-[2s] "
+            style={{
+              backgroundImage: `url(${img4})`,
+            }}
+          ></div>
+        </div>
+
+        <div className="h-64 rounded-md sm:col-span-2 overflow-hidden">
+          <div
+            className="h-full rounded-md w-full bg-cover bg-no-repeat bg-center hover:scale-110 hover:rotate-2 duration-[2s] "
+            style={{
+              backgroundImage: `url(${img10})`,
+            }}
+          ></div>
+        </div>
+
+        <div className="h-64 rounded-md col-span-2 overflow-hidden">
+          <div
+            className="h-full rounded-md w-full bg-cover bg-no-repeat bg-center hover:scale-110 hover:rotate-2 duration-[2s] "
+            style={{
+              backgroundImage: `url(${img7})`,
+            }}
+          ></div>
+        </div>
+
+        <div className="sm:h-64 rounded-md col-span-1 sm:block hidden overflow-hidden">
+          <div
+            className="h-full rounded-md w-full bg-cover bg-no-repeat bg-center hover:scale-110 hover:rotate-2 duration-[2s] "
+            style={{
+              backgroundImage: `url(${img6})`,
+            }}
+          ></div>
+        </div>
       </div>
     </div>
   );
