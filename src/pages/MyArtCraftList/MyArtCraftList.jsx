@@ -41,7 +41,7 @@ const MyArtCraftList = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://localhost:3000/item-deletes/${id}`)
+          .delete(`https://snowy-art-server-side.vercel.app/item-deletes/${id}`)
           .then((response) => {
             console.log(`Deleted post with ID ${id},,,,,${response}`);
             Swal.fire({

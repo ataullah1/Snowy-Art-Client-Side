@@ -37,7 +37,7 @@ const AddCraftItems = () => {
       uid,
     };
     // console.log(formData);
-    fetch('http://localhost:3000/add-art-craft-items', {
+    fetch('https://snowy-art-server-side.vercel.app/add-art-craft-items', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

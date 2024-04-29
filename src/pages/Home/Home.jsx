@@ -10,7 +10,8 @@ import ArtistsintheStudio from '../../components/ArtistsintheStudio/Artistsinthe
 
 const Home = () => {
   const dta = useLoaderData();
-  const url = 'http://localhost:3000/art-craft-items-categories';
+  const url =
+    'https://snowy-art-server-side.vercel.app/art-craft-items-categories';
   const [data, setData] = useState([]);
 
   const fetchInfo = () => {

@@ -129,7 +129,7 @@ To install and run SnowyArt locally, follow these steps:
 
 ## Feedback and Contributions
 
-Feedback and contributions are welcome! If you encounter any issues or have suggestions for improvement, please [open an issue](https://github.com/programming-hero-web-course-4/b9a9-real-estate-ataullah1/issues) or submit a pull request.
+Feedback and contributions are welcome! If you encounter any issues or have suggestions for improvement, please [open an issue](https://github.com/programming-hero-web-course-4/B9A10-client-side-ataullah1/issues) or submit a pull request.
 
 ## Contact me
 

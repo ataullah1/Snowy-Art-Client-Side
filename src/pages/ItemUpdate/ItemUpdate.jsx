@@ -49,7 +49,10 @@ const ItemUpdate = () => {
     };
     // console.log(formData);
     axios
-      .put(`http://localhost:3000/item-updates/${_id}`, newData)
+      .put(
+        `https://snowy-art-server-side.vercel.app/item-updates/${_id}`,
+        newData
+      )
       .then((res) => {
         console.log(res);
         if (res.status === 200) {
