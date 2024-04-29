@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import img1 from '../../assets/banner/img9.jpg';
 // Sweetalert import
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 const Login = () => {
   // Naviget, login done then go to Home
   const naviget = useNavigate();
@@ -128,6 +129,9 @@ const Login = () => {
   }
   return (
     <div className="">
+      <Helmet>
+        <title>Login | SnowyArt</title>
+      </Helmet>
       {/* Top Banner Img */}
       <div className="h-48 md:h-64 bg-fuchsia-100">
         <div className="h-full w-full overflow-hidden">

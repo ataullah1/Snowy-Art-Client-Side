@@ -10,6 +10,7 @@ import { MdMenu } from 'react-icons/md';
 import { Tooltip } from 'react-tooltip';
 import { CgClose } from 'react-icons/cg';
 import { FiUserPlus } from 'react-icons/fi';
+import img1 from '../../assets/others/login4.png';
 
 const Nav = () => {
   // Theme funtionality
@@ -32,6 +33,13 @@ const Nav = () => {
   const { userDta } = useContext(ContextAuth);
   const [viewProfile, setViewProfile] = useState(false);
   const [view, setView] = useState(false);
+
+  // handleClose
+  const handleClose = () => {
+    document.getElementById('my_modal_1').classList.add('hidden');
+    console.log('Hello');
+    document.getElementById('my_modal_1').classList.remove('hidden');
+  };
 
   // console.log(hover);
   return (
@@ -207,8 +215,8 @@ const Nav = () => {
               </NavLink>
             </ul>
           </div>
-          <div className="navbar-end flex items-baseline gap-2 w-40">
-            <div className="hidden sm:block">
+          <div className="navbar-end flex items-center gap-2 w-40">
+            <div className="hidden sm:block pt-2">
               <label className="swap swap-rotate text-slate-100">
                 {/* this hidden checkbox controls the state */}
                 <input
@@ -270,7 +278,7 @@ const Nav = () => {
               </div>
             ) : (
               <div className="hidden sm:block">
-                <Link
+                <button
                   onClick={() =>
                     document.getElementById('my_modal_1').showModal()
                   }
@@ -279,26 +287,36 @@ const Nav = () => {
                   <span className="flex items-center gap-2">
                     <FiUserPlus /> Account
                   </span>
-                </Link>
+                </button>
               </div>
             )}
             {/* Open the modal using document.getElementById('ID').showModal() method */}
             <dialog id="my_modal_1" className="modal">
-              <div className="modal-box">
+              <div
+                className="modal-box relative w-[700px]"
+                style={{
+                  backgroundImage: `url(${img1})`,
+                  backgroundPosition: 'center',
+                  backgroundSize: 'cover',
+                  backgroundRepeat: 'no-repeat',
+                  boxShadow: '0px 0px 26px 5px #fff',
+                }}
+              >
                 <form method="dialog">
                   {/* if there is a button in form, it will close the modal */}
-                  <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-xl bg-slate-500 text-white">
+                  <button className="btn btn-sm btn-circle btn-ghost h-10 w-10 absolute right-2 top-2 text-2xl bg-slate-500 text-white hover:bg-slate-800">
                     <CgClose />
                   </button>
                 </form>
                 <div className="flex gap-4 justify-center items-center min-h-72">
-                  <Link to={'/login'}>
-                    <button className="text-lg font-bold py-2 border-2 bg-transparent border-firstColor hover:bg-firstColor px-3 rounded-md w-40 text-firstColor hover:text-white">
+                  <Link to={'/login'} onClick={handleClose}>
+                    <button className="text-lg font-bold py-2 border-2 bg-secondColor text-white border-secondColor hover:scale-110 duration-200 px-3 rounded-md w-40  hover:text-white">
                       Log In
                     </button>
                   </Link>
+
                   <Link to={'/register'}>
-                    <button className="text-lg font-bold py-2 border-2 bg-transparent border-firstColor hover:bg-firstColor px-3 rounded-md w-40 text-firstColor hover:text-white">
+                    <button className="text-lg font-bold py-2 border-2 bg-firstColor hover:scale-110 duration-200 shadow-lg border-firstColor hover:bg-firstColor px-3 rounded-md w-40 text-white">
                       Create Account
                     </button>
                   </Link>

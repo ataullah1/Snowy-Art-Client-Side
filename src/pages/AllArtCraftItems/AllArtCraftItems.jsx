@@ -3,6 +3,7 @@ import img1 from '../../assets/banner/img2.jpg';
 // import ItemSingleCard from '../../components/CraftItemsSection/ItemSingleCard';
 import { useState } from 'react';
 import { CgClose } from 'react-icons/cg';
+import { Helmet } from 'react-helmet';
 const AllArtCraftItems = () => {
   const data = useLoaderData();
   const [imgFullScreen, setImgFullScreen] = useState();
@@ -11,8 +12,12 @@ const AllArtCraftItems = () => {
     setImgFullScreen(img);
     document.getElementById('my_modal_3').showModal();
   };
+  
   return (
     <div className="pb-20">
+      <Helmet>
+        <title>All Art&Craft | SnowyArt</title>
+      </Helmet>
       {/* Modal open image  */}
       <dialog id="my_modal_3" className="modal">
         <div className="modal-box h-[500px] w-full sm:w-[500] relative border border-firstColor">

@@ -7,6 +7,7 @@ import MyArtCraftSingleCard from './MyArtCraftSingleCard';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { BiSearch } from 'react-icons/bi';
+import { Helmet } from 'react-helmet';
 const MyArtCraftList = () => {
   const { userDta } = useContext(ContextAuth);
   const data = useLoaderData();
@@ -66,6 +67,9 @@ const MyArtCraftList = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>My Art List | SnowyArt</title>
+      </Helmet>
       {/* Top Banner Img */}
       <div className="h-48 md:h-64 bg-fuchsia-100">
         <div className="h-full w-full overflow-hidden">

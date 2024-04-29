@@ -3,6 +3,7 @@ import banner from '../../assets/banner/img9.jpg';
 import { useContext } from 'react';
 import { ContextAuth } from '../../provider/Provider';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const AddCraftItems = () => {
   const { userDta } = useContext(ContextAuth);
@@ -61,6 +62,9 @@ const AddCraftItems = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>Add Item | SnowyArt</title>
+      </Helmet>
       {/* Top Banner Img */}
       <div className="h-48 md:h-64 bg-fuchsia-100">
         <div className="h-full w-full overflow-hidden">
@@ -89,7 +93,6 @@ const AddCraftItems = () => {
         </div>
       </div>
       {/* End Banner top */}
-
       {/* Main From */}
       <div className="rounded-lg py-5 px-6 md:px-8 lg:px-16 my-8 border-2 border-firstColor w-11/12 mx-auto shadow-xl">
         <h1 className="text-3xl md:text-5xl font-bold text-center">

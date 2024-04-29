@@ -1,9 +1,13 @@
 import { Link } from 'react-router-dom';
 import banner from '../../assets/banner/img1.jpg';
 import img1 from '../../assets/others/about.jpg';
+import { Helmet } from 'react-helmet';
 const About = () => {
   return (
     <div>
+      <Helmet>
+        <title>AboutUs | SnowyArt</title>
+      </Helmet>
       {/* Top Banner Img */}
       <div className="h-48 md:h-64 bg-fuchsia-100">
         <div className="h-full w-full overflow-hidden">

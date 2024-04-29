@@ -6,6 +6,7 @@ import { AiOutlineFullscreen } from 'react-icons/ai';
 import { BiShareAlt } from 'react-icons/bi';
 import { HiOutlineHeart } from 'react-icons/hi';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 const ArtAndCraftDetails = () => {
   const { id } = useParams();
@@ -45,6 +46,9 @@ const ArtAndCraftDetails = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>Item Details | SnowyArt</title>
+      </Helmet>
       {/* Top Banner Img */}
       <div className="h-52 md:h-72 bg-fuchsia-100">
         <div className=" h-full w-full overflow-hidden">

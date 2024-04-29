@@ -2,6 +2,7 @@ import axios from 'axios';
 import { Link, useLoaderData, useNavigate, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import banner from '../../assets/banner/img9.jpg';
+import { Helmet } from 'react-helmet';
 
 const ItemUpdate = () => {
   const { id } = useParams();
@@ -77,6 +78,9 @@ const ItemUpdate = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>Item Update | SnowyArt</title>
+      </Helmet>
       {/* Top Banner Img */}
       <div className="h-48 md:h-64 bg-fuchsia-100">
         <div className="h-full w-full overflow-hidden">

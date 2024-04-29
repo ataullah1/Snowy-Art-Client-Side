@@ -1,10 +1,14 @@
 import { Link } from 'react-router-dom';
 import Contact from './Contact';
 import banner from '../../assets/banner/img9.jpg';
+import { Helmet } from 'react-helmet';
 
 const ContactPage = () => {
   return (
     <div className="">
+      <Helmet>
+        <title>ContactUs | SnowyArt</title>
+      </Helmet>
       {/* Top Banner Img */}
       <div className="h-48 md:h-64 bg-fuchsia-100">
         <div className="h-full w-full overflow-hidden">
