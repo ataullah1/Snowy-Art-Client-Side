@@ -72,7 +72,7 @@ const Login = () => {
             title: 'Good job!',
             text: 'Your account has been successfully logged in.',
             icon: 'success',
-            timer: 1500,
+            timer: 2000,
           });
           naviget(location?.state ? location.state : '/');
         })
@@ -82,9 +82,9 @@ const Login = () => {
           setIsLoading(false);
           Swal.fire({
             title: 'Oops...!',
-            text: 'Sorry, your account could not be logged in!',
+            text: `Sorry, unable to login to this account. Please login with correct email and password.`,
             icon: 'error',
-            timer: 1500,
+            // timer: 1500,
           });
         });
     }
@@ -181,7 +181,7 @@ const Login = () => {
               />
             </label>
             {emailErr && (
-              <p className="text-sm text-red-500 italic">{emailErr}</p>
+              <p className="text-sm text-red-500 italic pt-1">{emailErr}</p>
             )}
           </div>
           <div>
@@ -201,7 +201,7 @@ const Login = () => {
               </div>
             </label>{' '}
             {passErr && (
-              <p className="text-sm text-red-500 italic">{passErr}</p>
+              <p className="text-sm text-red-500 italic pt-1">{passErr}</p>
             )}
           </div>
 

@@ -36,8 +36,6 @@ const Register = () => {
     userDta,
     profileUpdate,
     setIsLoading,
-    setReload,
-    reload,
   } = useContext(ContextAuth);
 
   // Naviget, login done then go to Login
@@ -79,36 +77,21 @@ const Register = () => {
       .then((res) => {
         // Update Profile
         console.log(res.user);
-        const lastSignInDate = res.user.metadata?.lastSignInDate;
-        const resName = res.user.displayName || name;
-        const resPhoto = res.user.photoURL || photo;
-        const resEmail = res.user.email || email;
-        const data = { lastSignInDate, resName, resEmail, resPhoto };
         profileUpdate(name, photo)
           .then(() => {
-            setReload(!reload);
-            fetch('https://coffee-store-serve-side.vercel.app/users', {
-              method: 'POST',
-              headers: {
-                'content-type': 'application/json',
-              },
-              body: JSON.stringify(data),
-            })
-              .then((res) => res.json())
-              .then((dta) => {
-                console.log(dta);
-              });
+            setIsLoading(false);
             Swal.fire({
               title: 'Good job!',
               text: 'Your account has been successfully created.',
               icon: 'success',
-              timer: 1500,
+              timer: 2000,
             });
           })
           .catch(() => {
+            setIsLoading(false);
             Swal.fire({
               title: 'Oops...!',
-              text: 'Sorry, your profile is not updated!',
+              text: 'Sorry, Your account is already created. But unable to update profile and name.',
               icon: 'error',
               timer: 1500,
             });
@@ -132,26 +115,7 @@ const Register = () => {
     socialLogin()
       .then((res) => {
         const user = res.user;
-        const lastSignInDate =
-          res.user.metadata?.lastSignInDate || 'Login time not access';
-        const resName = res.user.displayName || 'User Name';
-        const resPhoto =
-          res.user.photoURL ||
-          'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png';
-        const resEmail = res.user.email;
-        const data = { lastSignInDate, resName, resEmail, resPhoto };
         console.log(user);
-        fetch('https://coffee-store-serve-side.vercel.app/users', {
-          method: 'POST',
-          headers: {
-            'content-type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        })
-          .then((res) => res.json())
-          .then((dta) => {
-            console.log(dta);
-          });
         Swal.fire({
           title: 'Good job!',
           text: 'Your account has been successfully logged in.',

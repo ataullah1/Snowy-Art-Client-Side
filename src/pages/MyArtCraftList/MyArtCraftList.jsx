@@ -11,7 +11,7 @@ const MyArtCraftList = () => {
   const { userDta } = useContext(ContextAuth);
   const data = useLoaderData();
   const filterDta = data.filter(
-    (dta) => dta.email === userDta.email || dta.userName === userDta.displayName
+    (dta) => dta.email === userDta.email || dta.uid === userDta.uid
   );
   const [filterMyDta, setFilterMyDta] = useState(filterDta); //filterDta
 
@@ -95,42 +95,42 @@ const MyArtCraftList = () => {
       </div>
       {/* End Banner top */}
       <div className="w-11/12 mx-auto mb-8">
+        <div className="my-4 flex justify-between items-center">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center sm:gap-2">
+            <label>Sort by: </label>
+            <select
+              name="sortBy"
+              id=""
+              className="py-1 border border-firstColor px-3 outline-none w-36 sm:w-48 rounded"
+              onClick={handleSorting}
+            >
+              <option selected value="Default">
+                Default
+              </option>
+              <option value="Yes">Customizable</option>
+              <option value="No">Non Customizable</option>
+            </select>
+          </div>
+          <div className=" flex items-start flex-col">
+            <label htmlFor="" className="sm:hidden">
+              Search
+            </label>
+            <div className="relative">
+              <input
+                type="text"
+                name="search"
+                placeholder="Search Item"
+                id=""
+                className="py-1 border border-firstColor px-3 outline-none w-44 sm:w-72 rounded"
+              />
+              <span className="absolute top-1/2 -translate-y-1/2 right-2 sm:right-3 text-xl">
+                <BiSearch />
+              </span>
+            </div>
+          </div>
+        </div>
         {filterMyDta.length >= 1 ? (
           <div>
-            <div className="my-4 flex justify-between items-center">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center sm:gap-2">
-                <label>Sort by: </label>
-                <select
-                  name="sortBy"
-                  id=""
-                  className="py-1 border border-firstColor px-3 outline-none w-36 sm:w-48 rounded"
-                  onClick={handleSorting}
-                >
-                  <option selected value="Default">
-                    Default
-                  </option>
-                  <option value="Yes">Customizable</option>
-                  <option value="No">Non Customizable</option>
-                </select>
-              </div>
-              <div className=" flex items-start flex-col">
-                <label htmlFor="" className="sm:hidden">
-                  Search
-                </label>
-                <div className="relative">
-                  <input
-                    type="text"
-                    name="search"
-                    placeholder="Search Item"
-                    id=""
-                    className="py-1 border border-firstColor px-3 outline-none w-44 sm:w-72 rounded"
-                  />
-                  <span className="absolute top-1/2 -translate-y-1/2 right-2 sm:right-3 text-xl">
-                    <BiSearch />
-                  </span>
-                </div>
-              </div>
-            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-5">
               {filterMyDta.map((dta) => (
                 <MyArtCraftSingleCard

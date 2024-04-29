@@ -21,6 +21,7 @@ const AddCraftItems = () => {
     const description = dta.description.value;
     const userName = userDta?.displayName || 'Username not added';
     const email = userDta.email;
+    const uid = userDta.uid;
     const formData = {
       itemName,
       category,
@@ -33,6 +34,7 @@ const AddCraftItems = () => {
       description,
       userName,
       email,
+      uid,
     };
     // console.log(formData);
     fetch('http://localhost:3000/add-art-craft-items', {

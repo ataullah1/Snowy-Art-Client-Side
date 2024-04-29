@@ -37,7 +37,7 @@ const CraftItemsSection = ({ dta }) => {
       {/* // Modal End */}
 
       <div>
-        <h1 className="text-3xl md:text-5xl text-center pt-10 md:pt-20 font-bold pb-2">
+        <h1 className="text-3xl md:text-5xl text-center pt-2 md:pt-10 font-bold pb-2">
           Art & Craft Items
         </h1>
         <p className="max-w-[700px] mx-auto text-center ">
@@ -47,7 +47,7 @@ const CraftItemsSection = ({ dta }) => {
         </p>
       </div>
       <div>
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {dta.slice(0, 6).map((data) => (
             <ItemSingleCard
               key={data._id}
