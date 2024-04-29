@@ -4,6 +4,7 @@ import Banner from '../../components/Banner/Banner';
 import CraftItemsSection from '../../components/CraftItemsSection/CraftItemsSection';
 import { useEffect, useState } from 'react';
 import ArtGelary from '../../components/ArtGelary/ArtGelary';
+import BannerUnder from '../../components/BannerUnder/BannerUnder';
 
 const Home = () => {
   const dta = useLoaderData();
@@ -24,6 +25,7 @@ const Home = () => {
   return (
     <div>
       <Banner />
+      <BannerUnder />
       <div className="w-11/12 mx-auto">
         <CraftItemsSection dta={dta} />
         <ArtCraftCategoriesSection data={data} />
