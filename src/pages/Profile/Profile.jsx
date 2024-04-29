@@ -93,7 +93,7 @@ const Profile = () => {
               </div>
             </div>
             {update && (
-              <div className="w-[500px] mx-auto">
+              <div className="sm:w-[500px] mx-auto">
                 <input
                   type="text"
                   id="imgUrl"
