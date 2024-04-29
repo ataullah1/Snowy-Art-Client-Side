@@ -32,6 +32,12 @@ const Footer = () => {
               >
                 About Us
               </Link>
+              <Link
+                to={'/contact'}
+                className="hover:text-white hover:translate-x-2 duration-200"
+              >
+                Contact Us
+              </Link>
               <Link className="hover:text-white hover:translate-x-2 duration-200">
                 Terms & Conditions
               </Link>
@@ -43,9 +49,6 @@ const Footer = () => {
                 className="hover:text-white hover:translate-x-2 duration-200"
               >
                 Blog
-              </Link>
-              <Link className="hover:text-white hover:translate-x-2 duration-200">
-                Press Info
               </Link>
             </div>
           </div>

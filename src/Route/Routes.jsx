@@ -12,6 +12,7 @@ import PrivetRoute from './PrivetRoute';
 import ItemUpdate from '../pages/ItemUpdate/ItemUpdate';
 import ArtCraftCategoriesCard from '../pages/ArtCraftCategoriesCard/ArtCraftCategoriesCard';
 import About from '../pages/About/About';
+import ContactPage from '../pages/Contact/ContactPage';
 
 const router = createBrowserRouter([
   {
@@ -80,6 +81,10 @@ const router = createBrowserRouter([
       {
         path: '/about',
         element: <About />,
+      },
+      {
+        path: '/contact',
+        element: <ContactPage />,
       },
     ],
   },
