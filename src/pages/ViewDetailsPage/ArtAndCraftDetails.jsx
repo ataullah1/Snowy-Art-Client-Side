@@ -128,7 +128,7 @@ const ArtAndCraftDetails = () => {
         </div>
       </div>
       {/* End Banner top */}
-      <div className="w-11/12 mx-auto mt-10">
+      <div className="w-11/12 mx-auto my-14">
         <div className="rounded-lg border-2 border-firstColor max-w-[700px] lg:max-w-full mx-auto hover:shadow-lg flex flex-col lg:flex-row gap-3 lg:gap-5 items-center">
           {/* Banner Image */}
           <div className="rounded-t-md lg:rounded-t-none lg:rounded-l-md h-80 sm:h-96 md:min-h-[520px] w-full lg:w-2/5 overflow-hidden relative border-r">

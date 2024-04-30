@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import img1 from '../../assets/banner/img10.jpg';
 import noFile from '../../assets/error/noDta.jpg';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ContextAuth } from '../../provider/Provider';
 import MyArtCraftSingleCard from './MyArtCraftSingleCard';
 import axios from 'axios';
@@ -15,6 +15,7 @@ const MyArtCraftList = () => {
   const { userDta } = useContext(ContextAuth);
   const { data, isLoading, isError } = useQuery({
     queryKey: ['all-art-craft-items'],
+    initialData: [],
     queryFn: async () => {
       const res = await fetch(
         'https://snowy-art-server-side.vercel.app/all-art-craft-items'
@@ -22,11 +23,21 @@ const MyArtCraftList = () => {
       return res.json();
     },
   });
-  const filterDta = data.filter(
-    (dta) => dta.email === userDta.email || dta.uid === userDta.uid
-  );
+
+  // All my data Filter func
+  const [filterDta, setFilterDta] = useState();
+  useEffect(() => {
+    const filterData = data.filter(
+      (dta) => dta.email === userDta.email || dta.uid === userDta.uid
+    );
+    setFilterDta(filterData);
+  }, [data, userDta.email, userDta.uid]);
+
+  // UI Showing State
   const [filterMyDta, setFilterMyDta] = useState(filterDta); //filterDta
 
+  // Sorting State
+  const [sorting, setSorting] = useState();
   const handleSorting = (e) => {
     const sort = e.target.value;
     // console.log(sort);
@@ -34,10 +45,13 @@ const MyArtCraftList = () => {
       setFilterMyDta(filterDta);
       return;
     }
-    const sortCustomizable = filterDta?.filter(
-      (dta) => dta.customization === sort
-    );
-    setFilterMyDta(sortCustomizable);
+    useEffect(() => {
+      const sortCustomizable = filterDta?.filter(
+        (dta) => dta.customization === sort
+      );
+      setSorting(sortCustomizable);
+    }, [sort]);
+    setFilterMyDta(sorting);
   };
 
   //  Delete Item Function Call
