@@ -67,6 +67,7 @@ SnowyArt is an online platform dedicated to showcasing and selling various art p
 - **React Tooltip**
 - **React-Simple-Typewriter**
 - **Axios**
+- **TanStack Query**
 - **AOS Package**
 - **Swiper**
 - **React Hook Form**
@@ -116,7 +117,7 @@ To install and run SnowyArt locally, follow these steps:
 - **Using All Packages**
 
   ```
-  npm install react-icons swiper firebase react-hook-form sweetalert2 react-fast-marquee react-helmet aos react-tooltip react-simple-typewriter axios
+  npm install react-icons swiper firebase react-hook-form sweetalert2 react-fast-marquee react-helmet aos react-tooltip react-simple-typewriter axios @tanstack/react-query
   ```
 
 5. Run the development server:
