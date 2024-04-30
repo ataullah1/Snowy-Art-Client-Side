@@ -97,6 +97,7 @@ const Profile = () => {
                 <input
                   type="text"
                   id="imgUrl"
+                  defaultValue={userDta.photoURL}
                   placeholder="Input your new photo URL"
                   className={
                     photoErr
@@ -134,6 +135,7 @@ const Profile = () => {
                     <div>
                       <input
                         type="text"
+                        defaultValue={userDta.displayName}
                         placeholder="Your Name"
                         id="nameInp"
                         className="border-2 border-firstColor rounded-md py-1 px-2"
