@@ -2,13 +2,9 @@ import { useForm } from 'react-hook-form';
 import { BsSendFill } from 'react-icons/bs';
 
 const ContactForm = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
-  console.log(errors);
+
   return (
     <div className="p-4 md:p-8 rounded-3xl border-2 mt-14 gap-10 flex flex-col md:flex-row">
       <div className="w-full md:w-2/5 relative">

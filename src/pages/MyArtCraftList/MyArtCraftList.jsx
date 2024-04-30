@@ -21,7 +21,7 @@ const MyArtCraftList = () => {
       return res.json();
     },
   });
-  const filterDta = data?.filter(
+  const filterDta = data.filter(
     (dta) => dta.email === userDta.email || dta.uid === userDta.uid
   );
   const [filterMyDta, setFilterMyDta] = useState(filterDta); //filterDta
