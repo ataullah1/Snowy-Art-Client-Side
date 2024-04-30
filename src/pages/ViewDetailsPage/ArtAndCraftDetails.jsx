@@ -9,6 +9,8 @@ import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet';
 import { useQuery } from 'react-query';
 import Loding from '../Loding/Loding';
+import { CgClose } from 'react-icons/cg';
+import { useState } from 'react';
 
 const ArtAndCraftDetails = () => {
   const { id } = useParams();
@@ -58,6 +60,12 @@ const ArtAndCraftDetails = () => {
       timer: 2500,
     });
   };
+  const [imgFullScreen, setImgFullScreen] = useState();
+  const imageFullScreen = (img) => {
+    // console.log(img);
+    setImgFullScreen(img);
+    document.getElementById('my_modal_3').showModal();
+  };
 
   if (isError) {
     Swal.fire({
@@ -75,6 +83,26 @@ const ArtAndCraftDetails = () => {
       <Helmet>
         <title>Item Details | SnowyArt</title>
       </Helmet>
+      {/* Modal open image  */}
+      <dialog id="my_modal_3" className="modal">
+        <div className="modal-box h-[600px] sm:w-[800px] relative border border-firstColor">
+          <form method="dialog">
+            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-2xl bg-slate-700 text-white hover:text-firstColor hover:bg-white border-2 border-slate-700 hover:border-firstColor">
+              <CgClose />
+            </button>
+          </form>
+          <div
+            className="h-full w-full bg-cover bg-no-repeat rounded-md"
+            style={{
+              backgroundImage: `url(${imgFullScreen})`,
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+            }}
+          ></div>
+        </div>
+      </dialog>
+      {/* // Modal End */}
       {/* Top Banner Img */}
       <div className="h-52 md:h-72 bg-fuchsia-100">
         <div className=" h-full w-full overflow-hidden">
@@ -120,7 +148,7 @@ const ArtAndCraftDetails = () => {
             </div>
 
             <button
-              // onClick={() => imageFullScreen(photo)}
+              onClick={() => imageFullScreen(photo)}
               className="absolute bottom-2 z-20 right-2 text-white bg-slate-500 p-1 text-2xl rounded-md hover:text-firstColor"
             >
               <AiOutlineFullscreen />

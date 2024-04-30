@@ -5,7 +5,7 @@ import { BiShareAlt } from 'react-icons/bi';
 import { PropTypes, func } from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const MyArtCraftSingleCard = ({ dta, handleDeleteCard }) => {
+const MyArtCraftSingleCard = ({ dta, handleDeleteCard, imageFullScreen }) => {
   const {
     _id,
     photo,
@@ -34,7 +34,7 @@ const MyArtCraftSingleCard = ({ dta, handleDeleteCard }) => {
         ></div>
 
         <button
-          // onClick={() => imageFullScreen(photo)}
+          onClick={() => imageFullScreen(photo)}
           className="absolute bottom-2 z-20 right-2 text-white bg-slate-500 p-1 text-2xl rounded-md hover:text-firstColor"
         >
           <AiOutlineFullscreen />
@@ -133,4 +133,5 @@ export default MyArtCraftSingleCard;
 MyArtCraftSingleCard.propTypes = {
   dta: PropTypes.object,
   handleDeleteCard: func,
+  imageFullScreen: func,
 };
