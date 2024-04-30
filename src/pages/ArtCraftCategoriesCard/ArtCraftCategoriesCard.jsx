@@ -7,7 +7,6 @@ import { CgClose } from 'react-icons/cg';
 import { IoMdArrowRoundBack } from 'react-icons/io';
 const ArtCraftCategoriesCard = () => {
   const data = useLoaderData();
-
   const { id } = useParams();
   const filterCategories = data.filter((dta) => dta.category === id);
   const [imgFullScreen, setImgFullScreen] = useState();

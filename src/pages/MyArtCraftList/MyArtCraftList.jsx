@@ -1,7 +1,7 @@
 import { Link, useLoaderData } from 'react-router-dom';
 import img1 from '../../assets/banner/img10.jpg';
 // import noFile from '../../assets/error/noDta.jpg';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ContextAuth } from '../../provider/Provider';
 import MyArtCraftSingleCard from './MyArtCraftSingleCard';
 import axios from 'axios';
@@ -9,11 +9,14 @@ import Swal from 'sweetalert2';
 import { BiSearch } from 'react-icons/bi';
 import { Helmet } from 'react-helmet';
 import { CgClose } from 'react-icons/cg';
+import Loding from '../Loding/Loding';
 const MyArtCraftList = () => {
-  // const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(null);
   const { userDta } = useContext(ContextAuth);
   const data = useLoaderData();
-
+  useEffect(() => {
+    setIsLoading(data);
+  }, [data]);
   const filterDta = data.filter(
     (dta) => dta?.email === userDta?.email || dta.uid === userDta?.uid
   );
@@ -75,6 +78,9 @@ const MyArtCraftList = () => {
     document.getElementById('my_modal_3').showModal();
   };
 
+  if (!isLoading) {
+    return <Loding />;
+  }
   return (
     <div>
       <Helmet>
