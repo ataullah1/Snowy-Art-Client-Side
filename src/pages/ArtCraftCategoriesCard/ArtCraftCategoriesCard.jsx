@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import img1 from '../../assets/banner/img2.jpg';
 import ItemSingleCard from '../../components/CraftItemsSection/ItemSingleCard';
 import { useState } from 'react';
@@ -6,6 +6,7 @@ import { CgClose } from 'react-icons/cg';
 import Loding from '../Loding/Loding';
 import Swal from 'sweetalert2';
 import { useQuery } from 'react-query';
+import { IoMdArrowRoundBack } from 'react-icons/io';
 const ArtCraftCategoriesCard = () => {
   const { data, isLoading, isError } = useQuery({
     queryKey: ['all-art-craft-items'],
@@ -82,7 +83,15 @@ const ArtCraftCategoriesCard = () => {
         </div>
       </div>
       <div className="w-11/12 mx-auto">
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div className="my-8">
+          <Link
+            to={'/'}
+            className="text-xl mt-2 flex items-center gap-1 text-secondColor hover:text-firstColor"
+          >
+            <IoMdArrowRoundBack /> Go Back
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {filterCategories.map((dta) => (
             <ItemSingleCard
               key={dta._id}

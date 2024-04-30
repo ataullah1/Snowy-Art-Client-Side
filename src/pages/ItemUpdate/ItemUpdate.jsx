@@ -5,6 +5,7 @@ import banner from '../../assets/banner/img9.jpg';
 import { Helmet } from 'react-helmet';
 import { useQuery } from 'react-query';
 import Loding from '../Loding/Loding';
+// import { useEffect, useState } from 'react';
 
 const ItemUpdate = () => {
   const { id } = useParams();
@@ -21,6 +22,14 @@ const ItemUpdate = () => {
       return res.json();
     },
   });
+
+  // const [allDta, setAllDta] = useState([]);
+  // useEffect(() => {
+  //   fetch('https://snowy-art-server-side.vercel.app/all-art-craft-items')
+  //     .then((res) => res.json())
+  //     .then((dta) => setAllDta(dta));
+  // }, []);
+
   const filterUpdate = allDta.find((dta) => dta._id === id);
   const {
     _id,

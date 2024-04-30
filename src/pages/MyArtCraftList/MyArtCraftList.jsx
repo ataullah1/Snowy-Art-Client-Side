@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import img1 from '../../assets/banner/img10.jpg';
-import noFile from '../../assets/error/noDta.jpg';
+// import noFile from '../../assets/error/noDta.jpg';
 import { useContext, useEffect, useState } from 'react';
 import { ContextAuth } from '../../provider/Provider';
 import MyArtCraftSingleCard from './MyArtCraftSingleCard';
@@ -23,21 +23,14 @@ const MyArtCraftList = () => {
       return res.json();
     },
   });
-
-  // All my data Filter func
-  const [filterDta, setFilterDta] = useState();
+  const [filterDta, setFilterDta] = useState([]);
   useEffect(() => {
-    const filterData = data.filter(
+    const filterDta = data.filter(
       (dta) => dta.email === userDta.email || dta.uid === userDta.uid
     );
-    setFilterDta(filterData);
+    setFilterDta(filterDta);
   }, [data, userDta.email, userDta.uid]);
-
-  // UI Showing State
   const [filterMyDta, setFilterMyDta] = useState(filterDta); //filterDta
-
-  // Sorting State
-  const [sorting, setSorting] = useState();
   const handleSorting = (e) => {
     const sort = e.target.value;
     // console.log(sort);
@@ -45,13 +38,10 @@ const MyArtCraftList = () => {
       setFilterMyDta(filterDta);
       return;
     }
-    useEffect(() => {
-      const sortCustomizable = filterDta?.filter(
-        (dta) => dta.customization === sort
-      );
-      setSorting(sortCustomizable);
-    }, [sort]);
-    setFilterMyDta(sorting);
+    const sortCustomizable = filterDta?.filter(
+      (dta) => dta.customization === sort
+    );
+    setFilterMyDta(sortCustomizable);
   };
 
   //  Delete Item Function Call
@@ -196,24 +186,24 @@ const MyArtCraftList = () => {
             </div>
           </div>
         </div>
-        {filterMyDta?.length >= 1 ? (
-          <div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-5">
-              {filterMyDta.map((dta) => (
-                <MyArtCraftSingleCard
-                  key={dta._id}
-                  dta={dta}
-                  handleDeleteCard={handleDeleteCard}
-                  imageFullScreen={imageFullScreen}
-                />
-              ))}
-            </div>
+        {/* {filterMyDta?.length >= 1 ? ( */}
+        <div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-5">
+            {filterMyDta.map((dta) => (
+              <MyArtCraftSingleCard
+                key={dta._id}
+                dta={dta}
+                handleDeleteCard={handleDeleteCard}
+                imageFullScreen={imageFullScreen}
+              />
+            ))}
           </div>
-        ) : (
+        </div>
+        {/* ) : (
           <div className="mt-8">
             <img className="max-h-[450px] mx-auto" src={noFile} alt="" />
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );
