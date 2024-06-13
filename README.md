@@ -3,7 +3,7 @@
 ## Live Link: https://snowy-art.web.app/
 
 You can access the live side version of SnowyArt [here](https://snowy-art.web.app/). <br>
-You can access the Server side version of SnowyArt [here](https://github.com/programming-hero-web-course-4/b9a10-server-side-ataullah1).
+You can access the Server side version of SnowyArt [here](https://github.com/ataullah1/Snowy-Art-Server-Side.git).
 
 ## Description
 
@@ -84,43 +84,22 @@ To install and run SnowyArt locally, follow these steps:
 1. Clone the repository:
 
    ```
-   git clone https://github.com/programming-hero-web-course-4/B9A10-client-side-ataullah1.git
+   git clone https://github.com/ataullah1/Snowy-Art-Client-Side.git
    ```
 
 2. Navigate into the project directory:
 
    ```
-   cd SnowyArt
+   cd Snowy-Art
    ```
 
-3. Install dependencies using npm or yarn:
+3. Install dependencies using npm:
 
    ```
-   npm install -D tailwindcss postcss autoprefixer
+   npm install
    ```
 
-   #or
-
-   ```
-   yarn install -D tailwindcss postcss autoprefixer
-
-   ```
-
-4. All packages used by this project must be installed:
-
-- **React Router DOM**
-
-  ```
-  npm install react-router-dom localforage match-sorter sort-by
-  ```
-
-- **Using All Packages**
-
-  ```
-  npm install react-icons swiper firebase react-hook-form sweetalert2 react-fast-marquee react-helmet aos react-tooltip react-simple-typewriter axios @tanstack/react-query
-  ```
-
-5. Run the development server:
+4. Run the development server:
 
    ```
    npm run dev
@@ -130,7 +109,7 @@ To install and run SnowyArt locally, follow these steps:
 
 ## Feedback and Contributions
 
-Feedback and contributions are welcome! If you encounter any issues or have suggestions for improvement, please [open an issue](https://github.com/programming-hero-web-course-4/B9A10-client-side-ataullah1/issues) or submit a pull request.
+Feedback and contributions are welcome! If you encounter any issues or have suggestions for improvement, please [open an issue](https://github.com/ataullah1/Snowy-Art-Client-Side.git/issues) or submit a pull request.
 
 ## Contact me
 
